@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9d4688c85cd1728c7ca7793fb9a0da96 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9d4688c85cd1728c7ca7793fb9a0da96" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9d4688c85cd1728c7ca7793fb9a0da96 = L.map(
+                "map_9d4688c85cd1728c7ca7793fb9a0da96",
+                {
+                    center: [51.0, 6.5],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 8,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b6cbbd1aad97cab891af5c214bb00c6c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_b6cbbd1aad97cab891af5c214bb00c6c.addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        function geo_json_f5ef0a2070366538f64481f91e2c5cb3_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "red", "weight": 2};
+            }
+        }
+
+        function geo_json_f5ef0a2070366538f64481f91e2c5cb3_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_f5ef0a2070366538f64481f91e2c5cb3 = L.geoJson(null, {
+                onEachFeature: geo_json_f5ef0a2070366538f64481f91e2c5cb3_onEachFeature,
+            
+                style: geo_json_f5ef0a2070366538f64481f91e2c5cb3_styler,
+        });
+
+        function geo_json_f5ef0a2070366538f64481f91e2c5cb3_add (data) {
+            geo_json_f5ef0a2070366538f64481f91e2c5cb3
+                .addData(data);
+        }
+            geo_json_f5ef0a2070366538f64481f91e2c5cb3_add({"bbox": [5.9512135386, 50.7489864309, 7.0077544451, 51.2670019108], "features": [{"bbox": [5.9512135386, 50.7489864309, 7.0077544451, 51.2670019108], "geometry": {"coordinates": [[[5.9512135386, 50.7489864309], [7.0077544451, 50.7489864309], [7.0077544451, 51.2670019108], [5.9512135386, 51.2670019108], [5.9512135386, 50.7489864309]]], "type": "Polygon"}, "id": "0", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_f5ef0a2070366538f64481f91e2c5cb3.addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+            var circle_marker_247bc4c658010b22ced3c3802eb5273c = L.circleMarker(
+                [51.06381308115004, 6.511242179873344],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_e77486aac647076a64913633324ce115 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_908571771b568e4bf28d6f8d83867609 = $(`<div id="html_908571771b568e4bf28d6f8d83867609" style="width: 100.0%; height: 100.0%;">RWE Power AG consumes 409000000 litres of water</div>`)[0];
+                popup_e77486aac647076a64913633324ce115.setContent(html_908571771b568e4bf28d6f8d83867609);
+            
+        
+
+        circle_marker_247bc4c658010b22ced3c3802eb5273c.bindPopup(popup_e77486aac647076a64913633324ce115)
+        ;
+
+        
+    
+    
+            var circle_marker_713e86599e4ef79295351ddfe95813e2 = L.circleMarker(
+                [50.974776921649806, 6.982298741037595],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_ba2e2ed9170005ae63b359666c93cc17 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_0d965142b543e6198a6e98cb1e3e7a64 = $(`<div id="html_0d965142b543e6198a6e98cb1e3e7a64" style="width: 100.0%; height: 100.0%;">RheinEnergie consumes 270000000 litres of water</div>`)[0];
+                popup_ba2e2ed9170005ae63b359666c93cc17.setContent(html_0d965142b543e6198a6e98cb1e3e7a64);
+            
+        
+
+        circle_marker_713e86599e4ef79295351ddfe95813e2.bindPopup(popup_ba2e2ed9170005ae63b359666c93cc17)
+        ;
+
+        
+    
+    
+            var circle_marker_88ced381ca04ec313e6103ec554221a3 = L.circleMarker(
+                [51.06389561542569, 6.502045535397461],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_4701e0fc6870706625be65ee94ac8c93 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_99e4a01a064d5a1dfd154b183a933c58 = $(`<div id="html_99e4a01a064d5a1dfd154b183a933c58" style="width: 100.0%; height: 100.0%;">RWE Rheinbraun AG consumes 140000000 litres of water</div>`)[0];
+                popup_4701e0fc6870706625be65ee94ac8c93.setContent(html_99e4a01a064d5a1dfd154b183a933c58);
+            
+        
+
+        circle_marker_88ced381ca04ec313e6103ec554221a3.bindPopup(popup_4701e0fc6870706625be65ee94ac8c93)
+        ;
+
+        
+    
+    
+            var circle_marker_965bd572e6c59b721d9e5be16d944257 = L.circleMarker(
+                [51.04822080656991, 6.9381023337669125],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_2c575dac30eaf2fb5ec7ebddfb2d449b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a070ec461ddc411d23e955a2c3669101 = $(`<div id="html_a070ec461ddc411d23e955a2c3669101" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 100000000 litres of water</div>`)[0];
+                popup_2c575dac30eaf2fb5ec7ebddfb2d449b.setContent(html_a070ec461ddc411d23e955a2c3669101);
+            
+        
+
+        circle_marker_965bd572e6c59b721d9e5be16d944257.bindPopup(popup_2c575dac30eaf2fb5ec7ebddfb2d449b)
+        ;
+
+        
+    
+    
+            var circle_marker_a420ff40c0e98c30be8e47315ade8f30 = L.circleMarker(
+                [51.1528982553961, 6.849796424929531],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_f1c6db5dc8be2490670e234e58af0de5 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_feb3745f887654f17ae094fc74de5b69 = $(`<div id="html_feb3745f887654f17ae094fc74de5b69" style="width: 100.0%; height: 100.0%;">Niederrheinisch-Bergische Gemeinschaftswasserwerke GmbH consumes 65000000 litres of water</div>`)[0];
+                popup_f1c6db5dc8be2490670e234e58af0de5.setContent(html_feb3745f887654f17ae094fc74de5b69);
+            
+        
+
+        circle_marker_a420ff40c0e98c30be8e47315ade8f30.bindPopup(popup_f1c6db5dc8be2490670e234e58af0de5)
+        ;
+
+        
+    
+    
+            var circle_marker_6a50089cf56d639d57f37535f33d8dc0 = L.circleMarker(
+                [51.056144031914684, 6.577272335576712],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_f1b2c64a97d0742e66dce643e1b67486 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_aa0d1ff7b2e7a5e66359e6f73985fca9 = $(`<div id="html_aa0d1ff7b2e7a5e66359e6f73985fca9" style="width: 100.0%; height: 100.0%;">RWE Power AG consumes 64000000 litres of water</div>`)[0];
+                popup_f1b2c64a97d0742e66dce643e1b67486.setContent(html_aa0d1ff7b2e7a5e66359e6f73985fca9);
+            
+        
+
+        circle_marker_6a50089cf56d639d57f37535f33d8dc0.bindPopup(popup_f1b2c64a97d0742e66dce643e1b67486)
+        ;
+
+        
+    
+    
+            var circle_marker_c3c41e9640afa43f89fd3fb053fbad84 = L.circleMarker(
+                [51.07772036868108, 6.861565081858323],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_5b0c657b04cdbcdd2da8c106f6d3c8e5 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2a284994460893552a7604f42316262f = $(`<div id="html_2a284994460893552a7604f42316262f" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 52500000 litres of water</div>`)[0];
+                popup_5b0c657b04cdbcdd2da8c106f6d3c8e5.setContent(html_2a284994460893552a7604f42316262f);
+            
+        
+
+        circle_marker_c3c41e9640afa43f89fd3fb053fbad84.bindPopup(popup_5b0c657b04cdbcdd2da8c106f6d3c8e5)
+        ;
+
+        
+    
+    
+            var circle_marker_d9928ccff2312d5ecbfad02c629bd366 = L.circleMarker(
+                [51.08156242991752, 6.857732628751916],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_a406340dbf3ca04c31bb1d3cca4ffef5 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_b9f5e53a79f3f5bb972d49c47eda9ed0 = $(`<div id="html_b9f5e53a79f3f5bb972d49c47eda9ed0" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 52500000 litres of water</div>`)[0];
+                popup_a406340dbf3ca04c31bb1d3cca4ffef5.setContent(html_b9f5e53a79f3f5bb972d49c47eda9ed0);
+            
+        
+
+        circle_marker_d9928ccff2312d5ecbfad02c629bd366.bindPopup(popup_a406340dbf3ca04c31bb1d3cca4ffef5)
+        ;
+
+        
+    
+    
+            var circle_marker_0b535d7182578173fc71f37ace382d5e = L.circleMarker(
+                [51.0861952013952, 6.859260669550845],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_987fa5a302e651474a585d48896428b2 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_9b7452ee3d764aea352220a9b12073e9 = $(`<div id="html_9b7452ee3d764aea352220a9b12073e9" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 52500000 litres of water</div>`)[0];
+                popup_987fa5a302e651474a585d48896428b2.setContent(html_9b7452ee3d764aea352220a9b12073e9);
+            
+        
+
+        circle_marker_0b535d7182578173fc71f37ace382d5e.bindPopup(popup_987fa5a302e651474a585d48896428b2)
+        ;
+
+        
+    
+    
+            var circle_marker_7938f590473e4ebce8ce6dee20777b02 = L.circleMarker(
+                [51.08835613962687, 6.866772328874837],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_aaf18eeb7963fd9b033e53b17a76a1d4 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_65a2030b7f5990b5b9b08c55ab215496 = $(`<div id="html_65a2030b7f5990b5b9b08c55ab215496" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 52500000 litres of water</div>`)[0];
+                popup_aaf18eeb7963fd9b033e53b17a76a1d4.setContent(html_65a2030b7f5990b5b9b08c55ab215496);
+            
+        
+
+        circle_marker_7938f590473e4ebce8ce6dee20777b02.bindPopup(popup_aaf18eeb7963fd9b033e53b17a76a1d4)
+        ;
+
+        
+    
+    
+            var circle_marker_f6e68c2fbb9f6a99c7f0116c65452f01 = L.circleMarker(
+                [51.092877017802564, 6.858252232578355],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_efd7b09202a2dce632782117d416be84 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d06fbe0c054a9f95d186429cfba5885d = $(`<div id="html_d06fbe0c054a9f95d186429cfba5885d" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 25000000 litres of water</div>`)[0];
+                popup_efd7b09202a2dce632782117d416be84.setContent(html_d06fbe0c054a9f95d186429cfba5885d);
+            
+        
+
+        circle_marker_f6e68c2fbb9f6a99c7f0116c65452f01.bindPopup(popup_efd7b09202a2dce632782117d416be84)
+        ;
+
+        
+    
+    
+            var circle_marker_6c59f2b732b6d3f79fb97fce1dfc7b64 = L.circleMarker(
+                [51.10327885945494, 6.874299138476908],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_dca12346949cb29244b01b392d700283 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a7775ae2aeae884be6f5a82bc93b1e5c = $(`<div id="html_a7775ae2aeae884be6f5a82bc93b1e5c" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 20000000 litres of water</div>`)[0];
+                popup_dca12346949cb29244b01b392d700283.setContent(html_a7775ae2aeae884be6f5a82bc93b1e5c);
+            
+        
+
+        circle_marker_6c59f2b732b6d3f79fb97fce1dfc7b64.bindPopup(popup_dca12346949cb29244b01b392d700283)
+        ;
+
+        
+    
+    
+            var circle_marker_1dd8c59998e4840567141602315a4eae = L.circleMarker(
+                [51.110222382097284, 6.871851696786457],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_d54eeb424d89f9b9cb904d0c4bd2d763 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e2198964e91def890f29a7397ccc811f = $(`<div id="html_e2198964e91def890f29a7397ccc811f" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 20000000 litres of water</div>`)[0];
+                popup_d54eeb424d89f9b9cb904d0c4bd2d763.setContent(html_e2198964e91def890f29a7397ccc811f);
+            
+        
+
+        circle_marker_1dd8c59998e4840567141602315a4eae.bindPopup(popup_d54eeb424d89f9b9cb904d0c4bd2d763)
+        ;
+
+        
+    
+    
+            var circle_marker_1eb29fe2e7b4bf9b0073f1212e3dad6c = L.circleMarker(
+                [51.0200456369167, 6.976269900864832],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_e36243f3726799b40f7b9b0c369cd082 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f4afbfb82b2c2fd3fb53172653f36f2e = $(`<div id="html_f4afbfb82b2c2fd3fb53172653f36f2e" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 16000000 litres of water</div>`)[0];
+                popup_e36243f3726799b40f7b9b0c369cd082.setContent(html_f4afbfb82b2c2fd3fb53172653f36f2e);
+            
+        
+
+        circle_marker_1eb29fe2e7b4bf9b0073f1212e3dad6c.bindPopup(popup_e36243f3726799b40f7b9b0c369cd082)
+        ;
+
+        
+    
+    
+            var circle_marker_375db2943651ecc7f660d0939e2a5059 = L.circleMarker(
+                [51.11729054293747, 6.863424813300607],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_cedcf34672a25c9b0af36579eaa03667 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e2970609d6ef063f95ec12d9b7dbc337 = $(`<div id="html_e2970609d6ef063f95ec12d9b7dbc337" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 15000000 litres of water</div>`)[0];
+                popup_cedcf34672a25c9b0af36579eaa03667.setContent(html_e2970609d6ef063f95ec12d9b7dbc337);
+            
+        
+
+        circle_marker_375db2943651ecc7f660d0939e2a5059.bindPopup(popup_cedcf34672a25c9b0af36579eaa03667)
+        ;
+
+        
+    
+    
+            var circle_marker_2abf1625701d778da31f766c4497062b = L.circleMarker(
+                [51.12229538889579, 6.855805457159148],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_84bee1d7ea6ea5b4955b88a51da1e6ff = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_af65f7677efd86c70ac3035bec439af9 = $(`<div id="html_af65f7677efd86c70ac3035bec439af9" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 8000000 litres of water</div>`)[0];
+                popup_84bee1d7ea6ea5b4955b88a51da1e6ff.setContent(html_af65f7677efd86c70ac3035bec439af9);
+            
+        
+
+        circle_marker_2abf1625701d778da31f766c4497062b.bindPopup(popup_84bee1d7ea6ea5b4955b88a51da1e6ff)
+        ;
+
+        
+    
+    
+            var circle_marker_4cddfe7341649127c778e03844cdb6ab = L.circleMarker(
+                [51.176423833815214, 6.787035576377264],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_e96f204583e5fd8f3c8ef10438ca52ce = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_91851f4fcf57912eff63f7bbf56654ea = $(`<div id="html_91851f4fcf57912eff63f7bbf56654ea" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 8000000 litres of water</div>`)[0];
+                popup_e96f204583e5fd8f3c8ef10438ca52ce.setContent(html_91851f4fcf57912eff63f7bbf56654ea);
+            
+        
+
+        circle_marker_4cddfe7341649127c778e03844cdb6ab.bindPopup(popup_e96f204583e5fd8f3c8ef10438ca52ce)
+        ;
+
+        
+    
+    
+            var circle_marker_061a01d34551c24d40a0341ba5153e66 = L.circleMarker(
+                [51.12881839731164, 6.861349087229306],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_8fe6c3ae18b0c9b4d040dcee7493b422 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_840a4ce123c586fa542c356873ce914e = $(`<div id="html_840a4ce123c586fa542c356873ce914e" style="width: 100.0%; height: 100.0%;">Wasserwerk Baumberg GmbH consumes 7000000 litres of water</div>`)[0];
+                popup_8fe6c3ae18b0c9b4d040dcee7493b422.setContent(html_840a4ce123c586fa542c356873ce914e);
+            
+        
+
+        circle_marker_061a01d34551c24d40a0341ba5153e66.bindPopup(popup_8fe6c3ae18b0c9b4d040dcee7493b422)
+        ;
+
+        
+    
+    
+            var circle_marker_61a958be35ad2efedc89457172f39e1d = L.circleMarker(
+                [51.12943435377459, 6.860605971332336],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_802df4e9e214a98698fb84819fd94481 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_985060376bef78b48609191fb5ae3f31 = $(`<div id="html_985060376bef78b48609191fb5ae3f31" style="width: 100.0%; height: 100.0%;">Wasserwerk Baumberg GmbH consumes 7000000 litres of water</div>`)[0];
+                popup_802df4e9e214a98698fb84819fd94481.setContent(html_985060376bef78b48609191fb5ae3f31);
+            
+        
+
+        circle_marker_61a958be35ad2efedc89457172f39e1d.bindPopup(popup_802df4e9e214a98698fb84819fd94481)
+        ;
+
+        
+    
+    
+            var circle_marker_e9d3aeb2461ef9196f264017ffe8f15c = L.circleMarker(
+                [51.18079430421639, 6.776580878590346],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_1086f8cf274077bbcb3761dc70d3ea50 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5ac9aceb3d5a3218f7086b9805c9397b = $(`<div id="html_5ac9aceb3d5a3218f7086b9805c9397b" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 6000000 litres of water</div>`)[0];
+                popup_1086f8cf274077bbcb3761dc70d3ea50.setContent(html_5ac9aceb3d5a3218f7086b9805c9397b);
+            
+        
+
+        circle_marker_e9d3aeb2461ef9196f264017ffe8f15c.bindPopup(popup_1086f8cf274077bbcb3761dc70d3ea50)
+        ;
+
+        
+    
+    
+            var circle_marker_fd9e47b3191ec5f4c8fc38b289a29de6 = L.circleMarker(
+                [51.06200732104103, 6.948279465062417],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_cb96ea144c1706c699b7142009415791 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2442ae577b095f701dbeed702f812eec = $(`<div id="html_2442ae577b095f701dbeed702f812eec" style="width: 100.0%; height: 100.0%;">Energieversorgung Leverkusen GmbH consumes 5800000 litres of water</div>`)[0];
+                popup_cb96ea144c1706c699b7142009415791.setContent(html_2442ae577b095f701dbeed702f812eec);
+            
+        
+
+        circle_marker_fd9e47b3191ec5f4c8fc38b289a29de6.bindPopup(popup_cb96ea144c1706c699b7142009415791)
+        ;
+
+        
+    
+    
+            var circle_marker_a0a33b6582f5a05a7c54cc905962d9f3 = L.circleMarker(
+                [51.21088855556371, 6.601846535722736],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_a3fcf021584809bc256a5e2cb95e2a7b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_c5311be193043e08dd57fba38790a2ec = $(`<div id="html_c5311be193043e08dd57fba38790a2ec" style="width: 100.0%; height: 100.0%;">Kreiswerke Grevenbroich GmbH consumes 5420000 litres of water</div>`)[0];
+                popup_a3fcf021584809bc256a5e2cb95e2a7b.setContent(html_c5311be193043e08dd57fba38790a2ec);
+            
+        
+
+        circle_marker_a0a33b6582f5a05a7c54cc905962d9f3.bindPopup(popup_a3fcf021584809bc256a5e2cb95e2a7b)
+        ;
+
+        
+    
+    
+            var circle_marker_2a471c0cf041f184309cb051bd348e93 = L.circleMarker(
+                [51.215952002719455, 6.693519949320531],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_d2228a1ebf0556ef22433e29ff889ac2 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_64690400fc709844456d4ef5f605216f = $(`<div id="html_64690400fc709844456d4ef5f605216f" style="width: 100.0%; height: 100.0%;">O. &  L. Sels GmbH & Co. KG consumes 5184000 litres of water</div>`)[0];
+                popup_d2228a1ebf0556ef22433e29ff889ac2.setContent(html_64690400fc709844456d4ef5f605216f);
+            
+        
+
+        circle_marker_2a471c0cf041f184309cb051bd348e93.bindPopup(popup_d2228a1ebf0556ef22433e29ff889ac2)
+        ;
+
+        
+    
+    
+            var circle_marker_cce2ee032130b1d145bcb17be20de32a = L.circleMarker(
+                [51.03987448917872, 6.974592726924971],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_86a062bbd0b40021f7884eb6d21e01c5 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_4ab964a26b94d6dc08704e1c00d7c561 = $(`<div id="html_4ab964a26b94d6dc08704e1c00d7c561" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 5000000 litres of water</div>`)[0];
+                popup_86a062bbd0b40021f7884eb6d21e01c5.setContent(html_4ab964a26b94d6dc08704e1c00d7c561);
+            
+        
+
+        circle_marker_cce2ee032130b1d145bcb17be20de32a.bindPopup(popup_86a062bbd0b40021f7884eb6d21e01c5)
+        ;
+
+        
+    
+    
+            var circle_marker_de281765cb9c5b1da1ea7b4a5348a2e0 = L.circleMarker(
+                [51.20127298841986, 6.694826092436505],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_df2979b81106b54f6f9168f33ff463f1 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e9f4402cb6e746bd72d50ab5df4e85ae = $(`<div id="html_e9f4402cb6e746bd72d50ab5df4e85ae" style="width: 100.0%; height: 100.0%;">Protein und Ãƒâ€“lwerk Neuss GmbH & Co. KG consumes 5000000 litres of water</div>`)[0];
+                popup_df2979b81106b54f6f9168f33ff463f1.setContent(html_e9f4402cb6e746bd72d50ab5df4e85ae);
+            
+        
+
+        circle_marker_de281765cb9c5b1da1ea7b4a5348a2e0.bindPopup(popup_df2979b81106b54f6f9168f33ff463f1)
+        ;
+
+        
+    
+    
+            var circle_marker_2d7683e14c1dc06f55aff422f72b7de8 = L.circleMarker(
+                [51.205590936906184, 6.65281891794934],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_05f94405e2f85291ac4b2c31798e2e6f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a4e716e06d3a513b0e5166080238230e = $(`<div id="html_a4e716e06d3a513b0e5166080238230e" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 4750000 litres of water</div>`)[0];
+                popup_05f94405e2f85291ac4b2c31798e2e6f.setContent(html_a4e716e06d3a513b0e5166080238230e);
+            
+        
+
+        circle_marker_2d7683e14c1dc06f55aff422f72b7de8.bindPopup(popup_05f94405e2f85291ac4b2c31798e2e6f)
+        ;
+
+        
+    
+    
+            var circle_marker_0ed4982b4851df0b4d7489d340a3b673 = L.circleMarker(
+                [51.21718441574462, 6.510595672255518],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_1a2941d4b8048da701554f58a29b5728 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ebbaa954a040ff11ecddcd844f848073 = $(`<div id="html_ebbaa954a040ff11ecddcd844f848073" style="width: 100.0%; height: 100.0%;">Niederrheinische Versorgung und Verkehr AG NVV AG | NEW NiederrheinWasser consumes 4220000 litres of water</div>`)[0];
+                popup_1a2941d4b8048da701554f58a29b5728.setContent(html_ebbaa954a040ff11ecddcd844f848073);
+            
+        
+
+        circle_marker_0ed4982b4851df0b4d7489d340a3b673.bindPopup(popup_1a2941d4b8048da701554f58a29b5728)
+        ;
+
+        
+    
+    
+            var circle_marker_f67ccb27b1f403a0518a4e8bec9d50be = L.circleMarker(
+                [51.06997407754596, 6.8955962891752165],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_81448dd744c1eabf56faec50cad4d65f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5903da090236e74dd09a27c4f87df1a2 = $(`<div id="html_5903da090236e74dd09a27c4f87df1a2" style="width: 100.0%; height: 100.0%;">Uniferm GmbH & Co. KG consumes 4000000 litres of water</div>`)[0];
+                popup_81448dd744c1eabf56faec50cad4d65f.setContent(html_5903da090236e74dd09a27c4f87df1a2);
+            
+        
+
+        circle_marker_f67ccb27b1f403a0518a4e8bec9d50be.bindPopup(popup_81448dd744c1eabf56faec50cad4d65f)
+        ;
+
+        
+    
+    
+            var circle_marker_311775aafe9a84d6bd742ac768e50e32 = L.circleMarker(
+                [51.18079430421639, 6.776580878590346],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_0502f91d4e9f3d7744df84706b6df40e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_47ed33544fccb9be9d97e93d099d4939 = $(`<div id="html_47ed33544fccb9be9d97e93d099d4939" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 4000000 litres of water</div>`)[0];
+                popup_0502f91d4e9f3d7744df84706b6df40e.setContent(html_47ed33544fccb9be9d97e93d099d4939);
+            
+        
+
+        circle_marker_311775aafe9a84d6bd742ac768e50e32.bindPopup(popup_0502f91d4e9f3d7744df84706b6df40e)
+        ;
+
+        
+    
+    
+            var circle_marker_ede5bf23af945daeb8a8690e39e86d5d = L.circleMarker(
+                [51.20064633366999, 6.695430004526325],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_394f3ab603a1aaee0efbdf6298ffd60b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_0e49302e512910c3df01b433bfcca306 = $(`<div id="html_0e49302e512910c3df01b433bfcca306" style="width: 100.0%; height: 100.0%;">Protein und Ãƒâ€“lwerk Neuss GmbH & Co. KG consumes 3000000 litres of water</div>`)[0];
+                popup_394f3ab603a1aaee0efbdf6298ffd60b.setContent(html_0e49302e512910c3df01b433bfcca306);
+            
+        
+
+        circle_marker_ede5bf23af945daeb8a8690e39e86d5d.bindPopup(popup_394f3ab603a1aaee0efbdf6298ffd60b)
+        ;
+
+        
+    
+    
+            var circle_marker_f4ed080d32c81e607525be6062494488 = L.circleMarker(
+                [51.20130219811483, 6.694939159325877],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_fb258c6fbe0f0718708a3e9fde2b2cb7 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_073616606da4bb8520d9c85c4286ccc2 = $(`<div id="html_073616606da4bb8520d9c85c4286ccc2" style="width: 100.0%; height: 100.0%;">Protein und Ãƒâ€“lwerk Neuss GmbH & Co. KG consumes 3000000 litres of water</div>`)[0];
+                popup_fb258c6fbe0f0718708a3e9fde2b2cb7.setContent(html_073616606da4bb8520d9c85c4286ccc2);
+            
+        
+
+        circle_marker_f4ed080d32c81e607525be6062494488.bindPopup(popup_fb258c6fbe0f0718708a3e9fde2b2cb7)
+        ;
+
+        
+    
+    
+            var circle_marker_ddee196c09a3004b854257deaf171e58 = L.circleMarker(
+                [51.24229169360053, 6.635704933843128],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_a69f43d057072b404f72a4007eb111f4 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_57ac8e95abc9f235dd81a214eb7ddf05 = $(`<div id="html_57ac8e95abc9f235dd81a214eb7ddf05" style="width: 100.0%; height: 100.0%;">Cemex Kies & Splitt GmbH consumes 2800000 litres of water</div>`)[0];
+                popup_a69f43d057072b404f72a4007eb111f4.setContent(html_57ac8e95abc9f235dd81a214eb7ddf05);
+            
+        
+
+        circle_marker_ddee196c09a3004b854257deaf171e58.bindPopup(popup_a69f43d057072b404f72a4007eb111f4)
+        ;
+
+        
+    
+    
+            var circle_marker_c9ddc6fab71d57151c58f44872a7aeaf = L.circleMarker(
+                [51.20273563273795, 6.65260620891543],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_e4412c7171cfa04d35a3538a0a95197d = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f0fbabd01ed29a2a0b17b2eeff2f8bfd = $(`<div id="html_f0fbabd01ed29a2a0b17b2eeff2f8bfd" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 2628000 litres of water</div>`)[0];
+                popup_e4412c7171cfa04d35a3538a0a95197d.setContent(html_f0fbabd01ed29a2a0b17b2eeff2f8bfd);
+            
+        
+
+        circle_marker_c9ddc6fab71d57151c58f44872a7aeaf.bindPopup(popup_e4412c7171cfa04d35a3538a0a95197d)
+        ;
+
+        
+    
+    
+            var circle_marker_b8796d30d82b44a616e1518b938056ec = L.circleMarker(
+                [51.20555207728467, 6.659406757822791],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_5f4cee1e3c83d4b0dcd1fa672ebb42e8 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_3747f6c3116aed18a32913bfcb8b0ecb = $(`<div id="html_3747f6c3116aed18a32913bfcb8b0ecb" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 2628000 litres of water</div>`)[0];
+                popup_5f4cee1e3c83d4b0dcd1fa672ebb42e8.setContent(html_3747f6c3116aed18a32913bfcb8b0ecb);
+            
+        
+
+        circle_marker_b8796d30d82b44a616e1518b938056ec.bindPopup(popup_5f4cee1e3c83d4b0dcd1fa672ebb42e8)
+        ;
+
+        
+    
+    
+            var circle_marker_e341d3b86861238f2a9d80fde56fcb64 = L.circleMarker(
+                [51.07129217905795, 6.887899308800245],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_17fea2403253d494488a8c72703e105e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5bc720d8363fcc2198f0a000c494cae2 = $(`<div id="html_5bc720d8363fcc2198f0a000c494cae2" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 2500000 litres of water</div>`)[0];
+                popup_17fea2403253d494488a8c72703e105e.setContent(html_5bc720d8363fcc2198f0a000c494cae2);
+            
+        
+
+        circle_marker_e341d3b86861238f2a9d80fde56fcb64.bindPopup(popup_17fea2403253d494488a8c72703e105e)
+        ;
+
+        
+    
+    
+            var circle_marker_9e3d3bcae75c6d4dc70d31c49d1a2d9c = L.circleMarker(
+                [51.07173646856751, 6.886108946570392],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_2578c6f2490d11bf98eae3a93915544d = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_35106e949ed8e32ac1500b5969dda44b = $(`<div id="html_35106e949ed8e32ac1500b5969dda44b" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 2500000 litres of water</div>`)[0];
+                popup_2578c6f2490d11bf98eae3a93915544d.setContent(html_35106e949ed8e32ac1500b5969dda44b);
+            
+        
+
+        circle_marker_9e3d3bcae75c6d4dc70d31c49d1a2d9c.bindPopup(popup_2578c6f2490d11bf98eae3a93915544d)
+        ;
+
+        
+    
+    
+            var circle_marker_88a96f121a215445a59aba06463d5b8e = L.circleMarker(
+                [51.072285411508666, 6.883642830918543],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_3fe70f9c5f12babf3fb598619bf2dd7f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_bd2d28987e707a38bdabb622a1ac939a = $(`<div id="html_bd2d28987e707a38bdabb622a1ac939a" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 2500000 litres of water</div>`)[0];
+                popup_3fe70f9c5f12babf3fb598619bf2dd7f.setContent(html_bd2d28987e707a38bdabb622a1ac939a);
+            
+        
+
+        circle_marker_88a96f121a215445a59aba06463d5b8e.bindPopup(popup_3fe70f9c5f12babf3fb598619bf2dd7f)
+        ;
+
+        
+    
+    
+            var circle_marker_5225e74012d28550804643a40aebf893 = L.circleMarker(
+                [51.0726505685126, 6.881955930958349],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_4d4f12af647b342ef832064e3508f069 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ae65ca160b16312aeb7373c58be83b36 = $(`<div id="html_ae65ca160b16312aeb7373c58be83b36" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 2500000 litres of water</div>`)[0];
+                popup_4d4f12af647b342ef832064e3508f069.setContent(html_ae65ca160b16312aeb7373c58be83b36);
+            
+        
+
+        circle_marker_5225e74012d28550804643a40aebf893.bindPopup(popup_4d4f12af647b342ef832064e3508f069)
+        ;
+
+        
+    
+    
+            var circle_marker_222fcca425d99316ce3c716b9a493bc6 = L.circleMarker(
+                [51.07323666166874, 6.879559395767206],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_2177ac19bf72d2c07bc2d93abaa94594 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7a593a7386df05d60de66b9061609ac4 = $(`<div id="html_7a593a7386df05d60de66b9061609ac4" style="width: 100.0%; height: 100.0%;">Bayer AG | Bayer Industry Services GmbH & Co. OHG consumes 2500000 litres of water</div>`)[0];
+                popup_2177ac19bf72d2c07bc2d93abaa94594.setContent(html_7a593a7386df05d60de66b9061609ac4);
+            
+        
+
+        circle_marker_222fcca425d99316ce3c716b9a493bc6.bindPopup(popup_2177ac19bf72d2c07bc2d93abaa94594)
+        ;
+
+        
+    
+    
+            var circle_marker_65a41660b3d92facd5ade13669695e74 = L.circleMarker(
+                [51.26266587044632, 6.258686128171814],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_b7fee15977bcc4256ee2f6c2cb36bbf6 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_541e056be3426722be2bb5daf18fba08 = $(`<div id="html_541e056be3426722be2bb5daf18fba08" style="width: 100.0%; height: 100.0%;">Niederrheinwerke Viersen GmbH | NEW NiederrheinWasser GmbH consumes 2500000 litres of water</div>`)[0];
+                popup_b7fee15977bcc4256ee2f6c2cb36bbf6.setContent(html_541e056be3426722be2bb5daf18fba08);
+            
+        
+
+        circle_marker_65a41660b3d92facd5ade13669695e74.bindPopup(popup_b7fee15977bcc4256ee2f6c2cb36bbf6)
+        ;
+
+        
+    
+    
+            var circle_marker_849789037b4561d558410ecea223da67 = L.circleMarker(
+                [51.044768796450946, 6.954562636349387],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_49dea82a4e52b935f2f4868e61491503 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ade9818f9ba4dc7dc0dba960f0ce5907 = $(`<div id="html_ade9818f9ba4dc7dc0dba960f0ce5907" style="width: 100.0%; height: 100.0%;">Bayer Industry Services GmbH & Co. OHG consumes 2200000 litres of water</div>`)[0];
+                popup_49dea82a4e52b935f2f4868e61491503.setContent(html_ade9818f9ba4dc7dc0dba960f0ce5907);
+            
+        
+
+        circle_marker_849789037b4561d558410ecea223da67.bindPopup(popup_49dea82a4e52b935f2f4868e61491503)
+        ;
+
+        
+    
+    
+            var circle_marker_4ab4cb38839cc075861203f0125bed13 = L.circleMarker(
+                [51.176423833815214, 6.787035576377264],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_d869e50d5e47e86b03c347a655ea012a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a120e7edea4827668e8adf42f931752f = $(`<div id="html_a120e7edea4827668e8adf42f931752f" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 2000000 litres of water</div>`)[0];
+                popup_d869e50d5e47e86b03c347a655ea012a.setContent(html_a120e7edea4827668e8adf42f931752f);
+            
+        
+
+        circle_marker_4ab4cb38839cc075861203f0125bed13.bindPopup(popup_d869e50d5e47e86b03c347a655ea012a)
+        ;
+
+        
+    
+    
+            var circle_marker_d6e9b46801ee1229e8e2fd5fbb0c2231 = L.circleMarker(
+                [51.20238733319504, 6.49702011145003],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_142de250133f47ba8c4bc2062b5fe5d7 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f808f73aaed49fae90c086d56f22d541 = $(`<div id="html_f808f73aaed49fae90c086d56f22d541" style="width: 100.0%; height: 100.0%;">Erftverband consumes 1950000 litres of water</div>`)[0];
+                popup_142de250133f47ba8c4bc2062b5fe5d7.setContent(html_f808f73aaed49fae90c086d56f22d541);
+            
+        
+
+        circle_marker_d6e9b46801ee1229e8e2fd5fbb0c2231.bindPopup(popup_142de250133f47ba8c4bc2062b5fe5d7)
+        ;
+
+        
+    
+    
+            var circle_marker_a1929210781b2a41072e3289b9d93681 = L.circleMarker(
+                [51.15035553596535, 6.922055679978799],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_338e3311e12ed120ddc1a381c36657a1 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ff3117ed25639e80c54f9e60333e6ec0 = $(`<div id="html_ff3117ed25639e80c54f9e60333e6ec0" style="width: 100.0%; height: 100.0%;">Stadtwerke Solingen GmbH | Wasserwerk Baumberg GmbH consumes 1800000 litres of water</div>`)[0];
+                popup_338e3311e12ed120ddc1a381c36657a1.setContent(html_ff3117ed25639e80c54f9e60333e6ec0);
+            
+        
+
+        circle_marker_a1929210781b2a41072e3289b9d93681.bindPopup(popup_338e3311e12ed120ddc1a381c36657a1)
+        ;
+
+        
+    
+    
+            var circle_marker_7d9fc8729b90345ec5bc9f79ec393728 = L.circleMarker(
+                [51.15035553596535, 6.922055679978799],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_d9f874661a68dd8d99a2033222b2d304 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_1bc0019ff2738e288ca8159b7edc89cc = $(`<div id="html_1bc0019ff2738e288ca8159b7edc89cc" style="width: 100.0%; height: 100.0%;">Stadtwerke Solingen GmbH | Wasserwerk Baumberg GmbH consumes 1800000 litres of water</div>`)[0];
+                popup_d9f874661a68dd8d99a2033222b2d304.setContent(html_1bc0019ff2738e288ca8159b7edc89cc);
+            
+        
+
+        circle_marker_7d9fc8729b90345ec5bc9f79ec393728.bindPopup(popup_d9f874661a68dd8d99a2033222b2d304)
+        ;
+
+        
+    
+    
+            var circle_marker_52d5fa68d7d0a890e21118694d40977e = L.circleMarker(
+                [51.150580856357095, 6.92258893819332],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_dbe6aa7561a5e734b0a1daa043a81abd = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d9cb9ae8d9789b58b8897a005afcc2fe = $(`<div id="html_d9cb9ae8d9789b58b8897a005afcc2fe" style="width: 100.0%; height: 100.0%;">Stadtwerke Solingen GmbH | Wasserwerk Baumberg GmbH consumes 1800000 litres of water</div>`)[0];
+                popup_dbe6aa7561a5e734b0a1daa043a81abd.setContent(html_d9cb9ae8d9789b58b8897a005afcc2fe);
+            
+        
+
+        circle_marker_52d5fa68d7d0a890e21118694d40977e.bindPopup(popup_dbe6aa7561a5e734b0a1daa043a81abd)
+        ;
+
+        
+    
+    
+            var circle_marker_0a85cf2536c3cf3da5b11ecea19f4600 = L.circleMarker(
+                [51.244705445608965, 6.597465037760606],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_1f75fd1f17e885b7822b7d9306203ec4 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e671251114be604a67bca2865fa5eb30 = $(`<div id="html_e671251114be604a67bca2865fa5eb30" style="width: 100.0%; height: 100.0%;">Kieswerk Loewen GmbH consumes 1800000 litres of water</div>`)[0];
+                popup_1f75fd1f17e885b7822b7d9306203ec4.setContent(html_e671251114be604a67bca2865fa5eb30);
+            
+        
+
+        circle_marker_0a85cf2536c3cf3da5b11ecea19f4600.bindPopup(popup_1f75fd1f17e885b7822b7d9306203ec4)
+        ;
+
+        
+    
+    
+            var circle_marker_723d35b4577c036419328b8c41f46914 = L.circleMarker(
+                [51.26266587044632, 6.258686128171814],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_1a28ca7fb5561e6f16ad1996bfaf9cc7 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_074e84bb8782e2b362c72c4120db4feb = $(`<div id="html_074e84bb8782e2b362c72c4120db4feb" style="width: 100.0%; height: 100.0%;">Niederrheinwerke Viersen GmbH | NEW NiederrheinWasser GmbH consumes 1750000 litres of water</div>`)[0];
+                popup_1a28ca7fb5561e6f16ad1996bfaf9cc7.setContent(html_074e84bb8782e2b362c72c4120db4feb);
+            
+        
+
+        circle_marker_723d35b4577c036419328b8c41f46914.bindPopup(popup_1a28ca7fb5561e6f16ad1996bfaf9cc7)
+        ;
+
+        
+    
+    
+            var circle_marker_1431d2a2432953d09f31d320e0259a83 = L.circleMarker(
+                [51.05303840662153, 6.809448430154188],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_c9cfae9e03ed39ea15d161c438d059c8 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ec3de62833d605006174fa81b3bf3cbf = $(`<div id="html_ec3de62833d605006174fa81b3bf3cbf" style="width: 100.0%; height: 100.0%;">EVD Energieversorgung Dormagen GmbH consumes 1500000 litres of water</div>`)[0];
+                popup_c9cfae9e03ed39ea15d161c438d059c8.setContent(html_ec3de62833d605006174fa81b3bf3cbf);
+            
+        
+
+        circle_marker_1431d2a2432953d09f31d320e0259a83.bindPopup(popup_c9cfae9e03ed39ea15d161c438d059c8)
+        ;
+
+        
+    
+    
+            var circle_marker_d84feefba03bbc7ad38d6ceeaf39768b = L.circleMarker(
+                [51.11805051493569, 6.749600983585493],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_7b239a872793e89c9ee068bd108207b4 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_948efb083d49a560f9292344b5ae7367 = $(`<div id="html_948efb083d49a560f9292344b5ae7367" style="width: 100.0%; height: 100.0%;">Kreiswerke Grevenbroich GmbH consumes 1500000 litres of water</div>`)[0];
+                popup_7b239a872793e89c9ee068bd108207b4.setContent(html_948efb083d49a560f9292344b5ae7367);
+            
+        
+
+        circle_marker_d84feefba03bbc7ad38d6ceeaf39768b.bindPopup(popup_7b239a872793e89c9ee068bd108207b4)
+        ;
+
+        
+    
+    
+            var circle_marker_56b790b9fe4b4a150169230664cb6d9f = L.circleMarker(
+                [51.121143659228544, 6.745363473926967],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_a7519520bafd38e4426e946e67f79bc3 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_700d899d365e13d6e74914c6579f7566 = $(`<div id="html_700d899d365e13d6e74914c6579f7566" style="width: 100.0%; height: 100.0%;">Kreiswerke Grevenbroich GmbH consumes 1500000 litres of water</div>`)[0];
+                popup_a7519520bafd38e4426e946e67f79bc3.setContent(html_700d899d365e13d6e74914c6579f7566);
+            
+        
+
+        circle_marker_56b790b9fe4b4a150169230664cb6d9f.bindPopup(popup_a7519520bafd38e4426e946e67f79bc3)
+        ;
+
+        
+    
+    
+            var circle_marker_0e85c9be19f71fb81fa6d54b042ceec1 = L.circleMarker(
+                [51.21306507756971, 6.723362515863413],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_819aca2c0ed94d056a0e0916e26d0172 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_570c8264ab85aba1018cd1e0d5932295 = $(`<div id="html_570c8264ab85aba1018cd1e0d5932295" style="width: 100.0%; height: 100.0%;">Essity Operations Neuss GmbH consumes 1500000 litres of water</div>`)[0];
+                popup_819aca2c0ed94d056a0e0916e26d0172.setContent(html_570c8264ab85aba1018cd1e0d5932295);
+            
+        
+
+        circle_marker_0e85c9be19f71fb81fa6d54b042ceec1.bindPopup(popup_819aca2c0ed94d056a0e0916e26d0172)
+        ;
+
+        
+    
+    
+            var circle_marker_2cc0bb8d7de27e86b3e765ee5bdba74c = L.circleMarker(
+                [51.214959453556965, 6.205469639934161],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_a3a2afaa4803bd7621a33eb39148066f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_6db929ef88d3b89f3bae9564d7dd98df = $(`<div id="html_6db929ef88d3b89f3bae9564d7dd98df" style="width: 100.0%; height: 100.0%;">Gemeindewerke Niederkruechten GmbH consumes 1400000 litres of water</div>`)[0];
+                popup_a3a2afaa4803bd7621a33eb39148066f.setContent(html_6db929ef88d3b89f3bae9564d7dd98df);
+            
+        
+
+        circle_marker_2cc0bb8d7de27e86b3e765ee5bdba74c.bindPopup(popup_a3a2afaa4803bd7621a33eb39148066f)
+        ;
+
+        
+    
+    
+            var circle_marker_730065b5f2395eac87df85ab6a7171b7 = L.circleMarker(
+                [51.22737304489569, 6.550139017330592],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_d71a3cf96cb4dbcfa7f8e42f7037c033 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_453c58b4c168d2b3890d055c12edeef6 = $(`<div id="html_453c58b4c168d2b3890d055c12edeef6" style="width: 100.0%; height: 100.0%;">Cemex Kies & Splitt GmbH consumes 1400000 litres of water</div>`)[0];
+                popup_d71a3cf96cb4dbcfa7f8e42f7037c033.setContent(html_453c58b4c168d2b3890d055c12edeef6);
+            
+        
+
+        circle_marker_730065b5f2395eac87df85ab6a7171b7.bindPopup(popup_d71a3cf96cb4dbcfa7f8e42f7037c033)
+        ;
+
+        
+    
+    
+            var circle_marker_94245ca9c0c4dbf2c0766934613fb938 = L.circleMarker(
+                [51.062516081308644, 6.9485709576329695],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_06b3a55bdca6684ab29c57585110941f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_b7ce8ff0debeb06eeb6ad97b63ff40e3 = $(`<div id="html_b7ce8ff0debeb06eeb6ad97b63ff40e3" style="width: 100.0%; height: 100.0%;">Energieversorgung Leverkusen GmbH consumes 1300000 litres of water</div>`)[0];
+                popup_06b3a55bdca6684ab29c57585110941f.setContent(html_b7ce8ff0debeb06eeb6ad97b63ff40e3);
+            
+        
+
+        circle_marker_94245ca9c0c4dbf2c0766934613fb938.bindPopup(popup_06b3a55bdca6684ab29c57585110941f)
+        ;
+
+        
+    
+    
+            var circle_marker_6e4a5916c9bc353391827e1783d67fa3 = L.circleMarker(
+                [51.20555207728467, 6.659406757822791],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_cec277ef89e2cc62b7cbd0fbec93b866 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ce55c4ded6a9d74bb261d393b4db8ab7 = $(`<div id="html_ce55c4ded6a9d74bb261d393b4db8ab7" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 1250000 litres of water</div>`)[0];
+                popup_cec277ef89e2cc62b7cbd0fbec93b866.setContent(html_ce55c4ded6a9d74bb261d393b4db8ab7);
+            
+        
+
+        circle_marker_6e4a5916c9bc353391827e1783d67fa3.bindPopup(popup_cec277ef89e2cc62b7cbd0fbec93b866)
+        ;
+
+        
+    
+    
+            var circle_marker_5e1cc8794a6a187ebef7078dd705878f = L.circleMarker(
+                [51.20555207728467, 6.659406757822791],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_301bcd6e0c853642cb6cda9ea7f45c94 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f260119c4a9bddb1aee60326c3e9ee67 = $(`<div id="html_f260119c4a9bddb1aee60326c3e9ee67" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 1250000 litres of water</div>`)[0];
+                popup_301bcd6e0c853642cb6cda9ea7f45c94.setContent(html_f260119c4a9bddb1aee60326c3e9ee67);
+            
+        
+
+        circle_marker_5e1cc8794a6a187ebef7078dd705878f.bindPopup(popup_301bcd6e0c853642cb6cda9ea7f45c94)
+        ;
+
+        
+    
+    
+            var circle_marker_845b43f2c66b6746adb10e0af2735630 = L.circleMarker(
+                [51.20555207728467, 6.659406757822791],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_c3d70da77b04268186412dbc76523237 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_df73dbd1c510b62833abdde312945ca5 = $(`<div id="html_df73dbd1c510b62833abdde312945ca5" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 1250000 litres of water</div>`)[0];
+                popup_c3d70da77b04268186412dbc76523237.setContent(html_df73dbd1c510b62833abdde312945ca5);
+            
+        
+
+        circle_marker_845b43f2c66b6746adb10e0af2735630.bindPopup(popup_c3d70da77b04268186412dbc76523237)
+        ;
+
+        
+    
+    
+            var circle_marker_202642f960d6db5af17452cee11dc345 = L.circleMarker(
+                [51.20555207728467, 6.659406757822791],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_734c913828f7114b4dfac04d6b34978e = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ab8e33d8a3b2fddcb1765387ee9c59dc = $(`<div id="html_ab8e33d8a3b2fddcb1765387ee9c59dc" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 1250000 litres of water</div>`)[0];
+                popup_734c913828f7114b4dfac04d6b34978e.setContent(html_ab8e33d8a3b2fddcb1765387ee9c59dc);
+            
+        
+
+        circle_marker_202642f960d6db5af17452cee11dc345.bindPopup(popup_734c913828f7114b4dfac04d6b34978e)
+        ;
+
+        
+    
+    
+            var circle_marker_78e12faf0e6d35009d72e24016d37e68 = L.circleMarker(
+                [51.20555207728467, 6.659406757822791],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_9e32aaad0e20b5211b778203ae00ef44 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_8770dfca6fa95a1d8c78fafd0ddfbf3d = $(`<div id="html_8770dfca6fa95a1d8c78fafd0ddfbf3d" style="width: 100.0%; height: 100.0%;">Stadtwerke Neuss Energie und Wasser GmbH consumes 1250000 litres of water</div>`)[0];
+                popup_9e32aaad0e20b5211b778203ae00ef44.setContent(html_8770dfca6fa95a1d8c78fafd0ddfbf3d);
+            
+        
+
+        circle_marker_78e12faf0e6d35009d72e24016d37e68.bindPopup(popup_9e32aaad0e20b5211b778203ae00ef44)
+        ;
+
+        
+    
+    
+            var circle_marker_3ab6bc093ae4c8972013d133ac5f33c5 = L.circleMarker(
+                [51.26379388899256, 6.289728363084187],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_1311cc715d516eb4e740dc386983de4a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_455396fdf6977c8d2f0a699c196bde90 = $(`<div id="html_455396fdf6977c8d2f0a699c196bde90" style="width: 100.0%; height: 100.0%;">NEW NiederrheinWasser GmbH | NEW NiederrheinWasser GmbH consumes 1250000 litres of water</div>`)[0];
+                popup_1311cc715d516eb4e740dc386983de4a.setContent(html_455396fdf6977c8d2f0a699c196bde90);
+            
+        
+
+        circle_marker_3ab6bc093ae4c8972013d133ac5f33c5.bindPopup(popup_1311cc715d516eb4e740dc386983de4a)
+        ;
+
+        
+    
+    
+            var circle_marker_0611b873f5283d4a769e25daa278da14 = L.circleMarker(
+                [51.264669399657734, 6.290637368106321],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_d15bc663b5be6addbb6808d8a3081d22 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2bdc951f0cd2ed7a7c88b76d9e31ec79 = $(`<div id="html_2bdc951f0cd2ed7a7c88b76d9e31ec79" style="width: 100.0%; height: 100.0%;">NEW NiederrheinWasser GmbH | NEW NiederrheinWasser GmbH consumes 1250000 litres of water</div>`)[0];
+                popup_d15bc663b5be6addbb6808d8a3081d22.setContent(html_2bdc951f0cd2ed7a7c88b76d9e31ec79);
+            
+        
+
+        circle_marker_0611b873f5283d4a769e25daa278da14.bindPopup(popup_d15bc663b5be6addbb6808d8a3081d22)
+        ;
+
+        
+    
+    
+            var circle_marker_6d806b6a860ef2e8bd2cda3c3c179091 = L.circleMarker(
+                [51.26591648154448, 6.29166791806617],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_da49ebf95806239c534353b580acba7b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_bef1b123e9e47d824581a4ef861e8b0d = $(`<div id="html_bef1b123e9e47d824581a4ef861e8b0d" style="width: 100.0%; height: 100.0%;">NEW NiederrheinWasser GmbH | NEW NiederrheinWasser GmbH consumes 1250000 litres of water</div>`)[0];
+                popup_da49ebf95806239c534353b580acba7b.setContent(html_bef1b123e9e47d824581a4ef861e8b0d);
+            
+        
+
+        circle_marker_6d806b6a860ef2e8bd2cda3c3c179091.bindPopup(popup_da49ebf95806239c534353b580acba7b)
+        ;
+
+        
+    
+    
+            var circle_marker_c2df76e6a6dd72091f207c8813cae85b = L.circleMarker(
+                [51.151176281134646, 6.921175122789886],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_9d4688c85cd1728c7ca7793fb9a0da96);
+        
+    
+        var popup_a49118526bf1f6bb13cb8ee09cb32ae8 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_31f5511c7d30a9f9f7ad6f668270ac63 = $(`<div id="html_31f5511c7d30a9f9f7ad6f668270ac63" style="width: 100.0%; height: 100.0%;">Stadtwerke Solingen GmbH | Wasserwerk Baumberg GmbH consumes 1080000 litres of water</div>`)[0];
+                popup_a49118526bf1f6bb13cb8ee09cb32ae8.setContent(html_31f5511c7d30a9f9f7ad6f668270ac63);
+            
+        
+
+        circle_marker_c2df76e6a6dd72091f207c8813cae85b.bindPopup(popup_a49118526bf1f6bb13cb8ee09cb32ae8)
+        ;
+
+        
+    
+</script>
+</html>
