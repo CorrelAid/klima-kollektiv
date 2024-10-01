@@ -4,7 +4,7 @@
 # by Tim Appelhans
 
 
-# run the command below in the console of your venv
+# run the command below in your console (or the console of your venv)
 # pip install -r requirements.txt
 
 import pandas as pd
