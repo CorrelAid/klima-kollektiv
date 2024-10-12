@@ -17,6 +17,6 @@ Desiree: dictionary creation, test if geropackage layers have layers on dictiona
 Paula: dictionary crs_region, test if file has crs format, test if file is a geopackage, renaming lakes
 Malte: automatic read in of all files in clean folder, steps for map creation (test clean_data before map creation)
 
-# asummption for cleaned data:
+# assumptions for cleaned data:
 * single geopackages in the folder clean_data
 * geopacke contains layers
