@@ -16,13 +16,14 @@
 
   
 ## Creating Virtual Environments:
+[here using conda and pip]
 1. Open a prompt like Anaconda prompt. Per default you are in your base environment (base).
 2. Execute the following commands:
 ```
  cd path-to-your-project-folder
  conda create -n klima-kollektiv   # or whatever virtual environment name
  conda activate klima-kollektiv     # you are now in your virtual environment (klima-kollektiv)
- conda install requirements.txt
+ pip install requirements.txt       # installing via pip enables saving and updating dependencies using only requirements.txt, using conda requires also a exporting a .yml file
 ```
 3. Select the environment in your project in your IDE.
 
