@@ -27,7 +27,9 @@
 3. Select the environment in your project in your IDE.
 
 ## Updating Virtual Environments:
+
 _Adding something to your virtual environment_
+
 You have to do this in order to call the library in your project.
 1. Open a prompt like Anaconda prompt. Per default you are in your base environment (base).
 2. Execute the following commands:
@@ -37,9 +39,10 @@ You have to do this in order to call the library in your project.
  cd path-to-your-project-folder     # in case you are not already in your project folder
  pip freeze > requirements.txt
 ```
-3. include requirements.txt file in your push.
+3. Include requirements.txt file in your push.
 
--Updating versions, dependencies and additional libraries_
+_Updating versions, dependencies and additional libraries_
+
 You should do this whenever the requirements.txt file has changed since your last commit.
 1. Open a prompt like Anaconda prompt. Per default you are in your base environment (base).
 2. Execute the following commands:
