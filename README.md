@@ -17,7 +17,7 @@
   
 ## Creating Virtual Environments:
 [here using conda and pip]
-1. Open a prompt like Anaconda prompt. Per default you are in your base environment (base).
+1. Open a Anaconda prompt. Per default you are in your base environment (base). Using Power Shell requires running ''' conda init powershell''' first to set up conda.
 2. Execute the following commands:
 ```
  cd path-to-your-project-folder
