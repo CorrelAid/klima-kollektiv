@@ -1,0 +1,42 @@
+{
+  "Lake": {
+    "pane": "polygonsPane",
+    "style_function": {
+      "color": "#4e4eff",
+      "fillColor": "#4e4eff",
+      "fillOpacity": 0.8,
+      "fill": true,
+      "weight": 0
+    }
+  },
+  "Pipeline": {
+    "pane": "linesPane",
+    "style_funtion": {
+      "color": "#6b6bc9",
+      "weight": 5
+    }
+  },
+  "Rodungsgebiet": {
+    "pane": "polygonsPane",
+    "style_function": {
+      "color": "brown",
+      "weight": 1,
+      "fillColor": "brown",
+      "fillOpacity": 0.3
+    }
+  },
+  
+  "points_of_interests": {
+    "pane": "pointsPane"
+  },
+
+  "Pumpbauwerk": {
+    "pane": "linesPane",
+    "style_function" : {
+        "color": "black",
+        "weight": 1,
+        "fillColor": "black",
+        "fillOpacity": 1
+    }
+  }
+}
