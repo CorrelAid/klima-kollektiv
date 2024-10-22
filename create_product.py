@@ -86,7 +86,7 @@ for file_path in folder_path.iterdir():
             current = gpd.read_file(f"./{file_path}", layer=layer)
             #
             # ---
-            # find out which panethe layer has
+            # find out which pane the layer has
             # ---
             #
             pane = "pane"
