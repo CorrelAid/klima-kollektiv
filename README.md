@@ -23,7 +23,7 @@
  cd path-to-your-project-folder
  conda create -n klima-kollektiv   # or whatever virtual environment name
  conda activate klima-kollektiv     # you are now in your virtual environment (klima-kollektiv)
- pip install requirements.txt       # installing via pip enables saving and updating dependencies using only requirements.txt, using conda requires also a exporting a .yml file
+ pip install -r requirements.txt       # installing via pip enables saving and updating dependencies using only requirements.txt, using conda requires also a exporting a .yml file
 ```
 3. Select the environment in your project in your IDE.
 
