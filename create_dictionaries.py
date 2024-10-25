@@ -10,7 +10,7 @@ import numpy as np
 
 layers = {"lake":
             {
-                "geometry": "polygon",
+                "geometry": "MultiPolygon",
                 "pane": "polygonesPane",
                 "color": "blue",
                 "map_style": {  # default styling setting for style_function parameter
@@ -23,7 +23,7 @@ layers = {"lake":
             },
             "line":
             {
-                "geometry": "polygon",
+                "geometry": "MultiPolygon",
                 "pane": "polygonesPane",
                 "color": "darkblue",
                 "map_style":  {  # default styling setting for style_function parameter
@@ -36,7 +36,7 @@ layers = {"lake":
             },
             "field":  # future use of further legend areas from the lakes
             {
-                "geometry": "polygon",
+                "geometry": "MultiPolygon",
                 "pane": "polygonesPane",
                 "color": "yellow",
                 "map_style": {  # default styling setting for style_function parameter
@@ -49,7 +49,7 @@ layers = {"lake":
             },
             "grass":  # future use of further legend areas from the lakes
             {
-                "geometry": "polygon",
+                "geometry": "MultiPolygon",
                 "pane": "polygonesPane",
                 "color": "green",
                 "map_style":  {  # default styling setting for style_function parameter
@@ -62,7 +62,7 @@ layers = {"lake":
             },
             "pipeline":
             {
-                "geometry": "lineString",
+                "geometry": "MultiLineString",
                 "pane": "linesPane",
                 "color": "red",
                 "map_style": {
@@ -72,7 +72,7 @@ layers = {"lake":
             },
             "building":  # verteilbauwerk + pumpbauwerk. HUHU: why type of polygon but put to pane "linesPane"?
             {
-                "geometry": "polygon",
+                "geometry": "MultiPolygon",
                 "pane": "polygonesPane",
                 "color": "black",
                 "map_style":  {  # default styling setting for style_function parameter
@@ -86,7 +86,7 @@ layers = {"lake":
             },
             "coordinates":  # contained in the file Rheinwassertransportleitung.kml
             {
-                "geometry": "points",
+                "geometry": "Points",
                 "pane": "pointsPane",
                 "color": "black"
             }
