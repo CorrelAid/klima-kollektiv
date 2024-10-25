@@ -72,15 +72,17 @@ layers = {"lake":
             },
             "building":  # verteilbauwerk + pumpbauwerk. HUHU: why type of polygon but put to pane "linesPane"?
             {
-                "geometry": "lineString",
-                "pane": "linesPane",
+                "geometry": "polygon",
+                "pane": "polygonesPane",
                 "color": "black",
-                "map_style":  {
-                    'color': 'black',
-                    'weight': 1,
-                    'fillColor': 'black',
-                    'fillOpacity': 1
+                "map_style":  {  # default styling setting for style_function parameter
+                    'color': "black",
+                    'fillColor': "black",
+                    'fillOpacity': 0.7,
+                    'fill':True,
+                    'weight': 1
                 }
+     
             },
             "coordinates":  # contained in the file Rheinwassertransportleitung.kml
             {
