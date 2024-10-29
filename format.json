@@ -9,7 +9,7 @@
       "weight": 0
     }
   },
-  "Pipeline": {
+    "Pipeline": {
     "pane": "linesPane",
     "style_funtion": {
       "color": "#6b6bc9",

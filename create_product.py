@@ -2,8 +2,6 @@
 # Oct, 12, 2024
 
 # by Tim Appelhans, Malte Ferber
-
-
 import pandas as pd
 import geopandas as gpd
 import folium
