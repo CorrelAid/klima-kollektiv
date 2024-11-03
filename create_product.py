@@ -37,9 +37,9 @@ def migrate_to_map(current, file_path, type):
 folder_path = Path('./clean_data')
 
 # open json-file
-with open('test_dic.json', 'r') as file:
+with open('format.json', 'r') as file:
     dictionary = json.load(file)
-print(dictionary)
+print("Objecttype dictionary:\n", dictionary)
 
 
 # Create a base map - to be automized with the location and zoom!
@@ -81,15 +81,15 @@ for file_path in folder_path.iterdir():
     if file_path.is_file():  # Check if it is a file (not a directory)
         print(f"Processing file: {file_path.name}")
 
-        # suggest: multiple layers in one file
+        # requirement: only one layer per file
         current = gpd.read_file(f"./{file_path}")
 
-        # Auf Name zugreifen
-        objecttype = file_path.name.split("_")[-1]
+        # Auf Dateiname zugreifen, letztes Wort ist der Objecttype (z.B. lake, pipeline, ...)
+        objecttype = file_path.name.split("_")[-1].lower()
 
-        # Im Dict nachschauen ob der current.geometry.geom_type erlaubt ist
+        # Im Dict format.json nachschauen ob der geom_type des files für den objecttype erlaubt ist
         if current.geometry.geom_type not in dictionary[objecttype]["geometry"]:
-            errorlist.append(file_path.name)
+            errorlist.append(file_path.name) # falls nicht: Dateiname in errorlist speichern
 
         migrate_to_map(current, file_path.name, objecttype)
 

@@ -1,5 +1,5 @@
 {
-  "Lake": {
+  "lake": {
     "geometry": ["Polygon", "MultiPolygon"],
     "pane": "polygonsPane",
     "style_function": {
@@ -10,16 +10,16 @@
       "weight": 0
     }
   },
-    "Pipeline": {
-    "geometry": ["Line", "MultiLine"],
+    "pipeline": {
+    "geometry": ["LineString", "MultiLineString"],
     "pane": "linesPane",
     "style_funtion": {
       "color": "#6b6bc9",
       "weight": 5
     }
   },
-  "Rodungsgebiet": {
-    "geometry": ["Polygon", "Multipolygon"],
+  "rodungsgebiet": {
+    "geometry": ["Polygon", "MultiPolygon"],
     "pane": "polygonsPane",
     "style_function": {
       "color": "brown",
@@ -30,12 +30,12 @@
   },
   
   "points_of_interests": {
-    "geometry": ["Points"],
+    "geometry": ["Point"],
     "pane": "pointsPane"
   },
 
-  "Pumpbauwerk": {
-    "geometry": ["Points"],
+  "pumpbauwerk": {
+    "geometry": ["Point"],
     "pane": "linesPane",
     "style_function" : {
         "color": "black",
