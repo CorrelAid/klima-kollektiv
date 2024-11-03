@@ -12,13 +12,13 @@ from pathlib import Path
 from typing import Generator
 
 
-def migrate_to_map(current, file_path, type):
+def migrate_to_map(current, Name, type):
     pane = dictionary[str(type)]["pane"]
     print(f"Adding {type} to map with pane {pane}")
     if type == "points_of_interests":
         folium.GeoJson(
             current,
-            name=file_path,
+            name=Name,
             pane=pane,
             tooltip=folium.GeoJsonTooltip(fields=['name'], labels=False)
         ).add_to(m)
@@ -28,7 +28,7 @@ def migrate_to_map(current, file_path, type):
         print('style dict is:', style)
         folium.GeoJson(
             current,
-            name=file_path,
+            name=Name,
             pane=pane,
             style_function=lambda feature: style,
             tooltip=folium.GeoJsonTooltip(fields=['name'], labels=False)
@@ -100,7 +100,7 @@ for file_path in folder_path.iterdir():
 
         current['name'] = Name
 
-        print('Has columns:', current.columns)
+        print('Has columns:', current)
         print('Layer is of geom_type:', str(current.geometry.geom_type))
         print('Layer is of objecttype:', objecttype)
 
@@ -108,11 +108,13 @@ for file_path in folder_path.iterdir():
         if objecttype not in dictionary or not current.geometry.geom_type.isin(dictionary[objecttype]["geometry"]).all():
             errorlist.append(file_path.name)  # falls nicht: Dateiname in errorlist speichern
 
-        migrate_to_map(current, file_path.name, objecttype)
+        migrate_to_map(current, Name, objecttype)
 
 print(f"gpkg files processed: {file_count}")
-
 print('Failed files are:', errorlist)
+
+# Add layer control to the map
+folium.LayerControl().add_to(m)
 
 # save the map as hmtl
 m.save('pipe_map.html')
