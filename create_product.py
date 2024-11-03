@@ -74,22 +74,26 @@ folium.TileLayer(
 ).add_to(m)
 
 
+errorlist = []
+
 # loop over every file in folder "clean_data"
 for file_path in folder_path.iterdir():
     if file_path.is_file():  # Check if it is a file (not a directory)
         print(f"Processing file: {file_path.name}")
 
         # suggest: multiple layers in one file
-        for layer in gpd.list_layers(f"./{file_path}"):
-            current = gpd.read_file(f"./{file_path}", layer=layer)
-            #
-            # ---
-            # find out which pane the layer has
-            # ---
-            #
-            pane = "pane"
-            migrate_to_map(current, file_path.name, layer)
+        current = gpd.read_file(f"./{file_path}")
+
+        # Auf Name zugreifen
+        objecttype = file_path.name.split("_")[-1]
+
+        # Im Dict nachschauen ob der current.geometry.geom_type erlaubt ist
+        if current.geometry.geom_type not in dictionary[objecttype]["geometry"]:
+            errorlist.append(file_path.name)
+
+        migrate_to_map(current, file_path.name, objecttype)
 
 
+print(errorlist)
 # save the map as hmtl
 m.save('pipe_map.html')

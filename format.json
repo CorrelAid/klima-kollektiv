@@ -1,5 +1,6 @@
 {
   "Lake": {
+    "geometry": ["Polygon", "MultiPolygon"],
     "pane": "polygonsPane",
     "style_function": {
       "color": "#4e4eff",
@@ -10,6 +11,7 @@
     }
   },
     "Pipeline": {
+    "geometry": ["Line", "MultiLine"],
     "pane": "linesPane",
     "style_funtion": {
       "color": "#6b6bc9",
@@ -17,6 +19,7 @@
     }
   },
   "Rodungsgebiet": {
+    "geometry": ["Polygon", "Multipolygon"],
     "pane": "polygonsPane",
     "style_function": {
       "color": "brown",
@@ -27,10 +30,12 @@
   },
   
   "points_of_interests": {
+    "geometry": ["Points"],
     "pane": "pointsPane"
   },
 
   "Pumpbauwerk": {
+    "geometry": ["Points"],
     "pane": "linesPane",
     "style_function" : {
         "color": "black",
