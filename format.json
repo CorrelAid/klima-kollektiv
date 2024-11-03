@@ -13,8 +13,8 @@
     "pipeline": {
     "geometry": ["LineString", "MultiLineString"],
     "pane": "linesPane",
-    "style_funtion": {
-      "color": "#6b6bc9",
+    "style_function": {
+      "color": "#c96b6b",
       "weight": 5
     }
   },

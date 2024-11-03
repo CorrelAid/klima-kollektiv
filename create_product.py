@@ -14,19 +14,21 @@ from typing import Generator
 
 def migrate_to_map(current, file_path, type):
     pane = dictionary[str(type)]["pane"]
+    print(f"Adding {type} to map with pane {pane}")
     if type == "points_of_interests":
         folium.GeoJson(
             current,
-            name=file_path.name,
+            name=file_path,
             pane=pane,
             tooltip=folium.GeoJsonTooltip(fields=['name'], labels=False)
         ).add_to(m)
 
     else:
-        style = dictionary[type]["style_function"]
+        style = dictionary[str(type)]["style_function"]
+        print('style dict is:', style)
         folium.GeoJson(
             current,
-            name=file_path.name,
+            name=file_path,
             pane=pane,
             style_function=lambda feature: style,
             tooltip=folium.GeoJsonTooltip(fields=['name'], labels=False)
@@ -71,10 +73,13 @@ folium.TileLayer(
     control=True,
     min_zoom=8,
     show=True  # hide layer when opening the map
-).add_to(m)
+).add_to(m) 
 
 
 errorlist = []
+
+# Initialize the file counter for gpkg files
+file_count = 0
 
 # loop over every file in folder "clean_data"
 for file_path in folder_path.iterdir():
@@ -82,18 +87,33 @@ for file_path in folder_path.iterdir():
         print(f"Processing file: {file_path.name}")
 
         # requirement: only one layer per file
-        current = gpd.read_file(f"./{file_path}")
+        if file_path.suffix == '.gpkg':
+            current = gpd.read_file(f"./{file_path}")
+            file_count += 1  # Increment the file counter
+        else:
+            print(f"Skipping file: {file_path.name}")
+            continue
 
-        # Auf Dateiname zugreifen, letztes Wort ist der Objecttype (z.B. lake, pipeline, ...)
-        objecttype = file_path.name.split("_")[-1].lower()
+        # Auf Dateiname zugreifen, letztes Wort vor Dateiformat ist der Objecttype (z.B. lake, pipeline, ...)
+        objecttype = file_path.name.split(".")[0].split("_")[-1].lower()
+        Name = file_path.name.split(".")[0].split("_")[0]
+
+        current['name'] = Name
+
+        print('Has columns:', current.columns)
+        print('Layer is of geom_type:', str(current.geometry.geom_type))
+        print('Layer is of objecttype:', objecttype)
 
         # Im Dict format.json nachschauen ob der geom_type des files für den objecttype erlaubt ist
-        if current.geometry.geom_type not in dictionary[objecttype]["geometry"]:
-            errorlist.append(file_path.name) # falls nicht: Dateiname in errorlist speichern
+        if objecttype not in dictionary or not current.geometry.geom_type.isin(dictionary[objecttype]["geometry"]).all():
+            errorlist.append(file_path.name)  # falls nicht: Dateiname in errorlist speichern
 
         migrate_to_map(current, file_path.name, objecttype)
 
+print(f"gpkg files processed: {file_count}")
 
-print(errorlist)
+print('Failed files are:', errorlist)
+
 # save the map as hmtl
 m.save('pipe_map.html')
+print('Map saved as pipe_map.html')
