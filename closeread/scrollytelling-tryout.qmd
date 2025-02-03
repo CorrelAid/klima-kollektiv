@@ -1,7 +1,10 @@
 ---
 title: Kohlegruben im Rheinischen Revier
-format: closeread-html
+format: 
+  closeread-html:
+    embed-resources: true
 ---
+
 :::{.cr-section}
 Deutschland ist noch immer der größte Braunkohleproduzent Europas [Quelle](https://www.destatis.de/Europa/DE/Thema/Umwelt-Energie/Braunkohle.html)
 
