@@ -1,0 +1,59 @@
+---
+title: Kohlegruben im Rheinischen Revier
+format: closeread-html
+---
+:::{.cr-section}
+Deutschland ist noch immer der größte Braunkohleproduzent Europas [Quelle](https://www.destatis.de/Europa/DE/Thema/Umwelt-Energie/Braunkohle.html)
+
+Fast 7 Milliarden Tonnen Braunkohle wurden im Rheinland seit 1950 gefördert
+[Quelle](https://www.bund-nrw.de/themen/braunkohle/hintergruende-und-publikationen/braunkohlentagebaue/) @cr-kohlegrube
+
+:::{#cr-kohlegrube}
+![](tagebau-hambach.jpg)
+[Bildquelle](https://img.fotocommunity.com/tagebau-hambach-12-1e9a1c18-0fe5-4b5f-8ef8-15b50b793973.jpg?width=1000)
+:::
+
+:::
+
+
+:::{.cr-section}
+
+Klima*Kollektiv hat gemeinsam mit CorrelAid eine interaktive Karte erstellt,
+die die Folgen des Kohleabbaus im rheinischen Revier zeigt.
+
+
+Scrolle weiter für eine Reise zu den größten Gruben Europas und den Plänen der RWE, sie über Jahrzehnte hinweg mit Rheinwasser zu fluten @cr-pipemap
+
+Wir beginnen im Tagebau Hambach, der größten und wohl bekanntesten der drei großen Kohlegruben [@cr-pipemap]{pan-to="30%,-50%" scale-by="2"}
+
+
+Weiter über den Tagebau bei Inden... [@cr-pipemap]{pan-to="100%,-70%" scale-by="3"}
+
+
+...bis zur Kohlegrube Garzweiler [@cr-pipemap]{pan-to="50%,50%" scale-by="2.5"}
+
+:::{#cr-pipemap}
+![](pipe_map.png)
+:::
+
+:::
+
+
+
+:::{.cr-section}
+
+Hier die interaktive Karte zum ausprobieren @cr-pipemap-html
+
+:::{#cr-pipemap-html}
+<iframe src="pipe_map.html" width="1200px" height="800px" style="border: none;"></iframe>
+:::
+
+:::
+
+### Vielen Dank fürs Lesen!
+
+Erstellt von [Klima*Kollektiv](https://klimakollektiv.org/) und  [CorrelAid](https://correlaid.org/)
+
+
+
+
