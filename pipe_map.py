@@ -68,6 +68,12 @@ inde_see = inde_see.set_geometry([Polygon(inde_see.get_coordinates())])
 garzweiler_see
 
 
+
+hyperscaler_bergheim = gpd.read_file("../data/hyperscaler-bergheim.gpkg")
+hyperscaler_bedburg = gpd.read_file("../data/hyperscaler-bedburg.gpkg")
+suendenwaeldchen = gpd.read_file("../data/suendenwaeldchen.gpkg")
+
+
 folium.GeoJson(
     hambacher_see,
     name="Hambacher See",
@@ -93,7 +99,9 @@ folium.GeoJson(
         'fill': True,
         'weight': 0
     },
-    tooltip="Hambacher See (Manheim) - geplant"
+    tooltip="Hambacher See (Manheim) - geplant.<br>\
+        Von Abbaggerung bedrohte Fläche, die nur für Sandgewinnung zerstört<br>\
+            werden soll und eine hohe Bedeutung für die Biotopvernetzung hat"
 ).add_to(m)
 
 folium.GeoJson(
@@ -270,11 +278,57 @@ folium.GeoJson(
 ).add_to(m)
 
 
+
+folium.GeoJson(
+    hyperscaler_bergheim,
+    name="Hyperscaler Bergheim",
+    pane="polygonsPane",
+    style_function=lambda feature: {
+        'color': '#c51b8a',
+        'fillColor': "#c51b8a",
+        'fillOpacity': 0.8,
+        'fill': True,
+        'weight': 0
+    },
+    tooltip="Hyperscaler Bergheim (hoher Wasserverbrauch)"
+).add_to(m)
+
+
+folium.GeoJson(
+    hyperscaler_bedburg,
+    name="Hyperscaler Bedburg",
+    pane="polygonsPane",
+    style_function=lambda feature: {
+        'color': '#c51b8a',
+        'fillColor': "#c51b8a",
+        'fillOpacity': 0.8,
+        'fill': True,
+        'weight': 0
+    },
+    tooltip="Hyperscaler Bedburg (hoher Wasserverbrauch)"
+).add_to(m)
+
+
+folium.GeoJson(
+    suendenwaeldchen,
+    name="Sündenwäldchen",
+    pane="polygonsPane",
+    style_function=lambda feature: {
+        'color': '#2ca25f',
+        'fillColor': "#2ca25f",
+        'fillOpacity': 0.8,
+        'fill': True,
+        'weight': 0
+    },
+    tooltip="Bedrohte Waldbesetzung"
+).add_to(m)
+
+
+
 # Add layer control to toggle layers
 folium.LayerControl().add_to(m)
 # m
 m.show_in_browser()
-
 
 # save the map as hmtl
 m.save('results/pipe_map.html')
