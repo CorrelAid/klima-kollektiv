@@ -1,0 +1,82 @@
+---
+title: "Example OJS IFrame"
+format:
+    closeread-html:
+        embed-resources: true
+        base: html
+execute:
+  echo: false
+---
+
+:::{.cr-section}
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  @cr-map1
+
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. @cr-map2
+
+:::{#cr-map1}
+```{ojs}
+(() => {
+  const iframe = document.createElement("iframe");
+  iframe.src = "pipe_map.html";
+  iframe.width = "1200";
+  iframe.height = "800";
+  iframe.style.border = "none";
+  iframe.overflow = true;
+  // Wait until the iframe is fully loaded
+  iframe.addEventListener("load", () => {
+      iframe.scr.contentWindow.flyTo(51.021422, 6.563473, 12);
+    }
+  );
+  return iframe;
+})()
+
+```
+
+:::
+
+
+:::{#cr-map2}
+```{ojs}
+(() => {
+  const iframe = document.createElement("iframe");
+  iframe.src = "pipe_map.html";
+  iframe.width = "1200";
+  iframe.height = "800";
+  iframe.style.border = "none";
+  iframe.overflow = true;
+  // Wait until the iframe is fully loaded
+  iframe.addEventListener("load", () => {
+      iframe.scr.contentWindow.flyTo(51.221422, 6.563473, 12);
+    }
+  );
+  return iframe;
+})()
+
+```
+
+:::
+:::
+
+
+:::{.cr-section}
+Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. @cr-map2
+
+:::{#cr-map2}
+```{ojs}
+(() => {
+  const container = document.createElement("div");
+
+  const iframe = document.createElement("iframe");
+  iframe.src = "pipe_map.html";
+  iframe.width = "1200";
+  iframe.height = "800";
+  iframe.style.border = "none";
+
+  container.appendChild(iframe);
+  return container;
+})
+```
+
+:::
+:::
+
