@@ -1,0 +1,303 @@
+---
+title: ""
+format: 
+  closeread-html:
+    css: my_styles.css # needed to display map correctly
+    embed-resources: true
+    # cr-style:
+    #   narrative-background-color-sidebar: "#ffccff"
+    #   narrative-text-color-sidebar: "#808080"
+    #   section-background-color: "#ccffff"
+---
+
+:::{.cr-section}
+
+:::{#cr-setup_map}
+
+```{r, setup_map}
+library(leaflet)
+
+zoom_data = list(
+  list(
+    coords = c(50.97919, 6.65288)
+    , zoom = 10.5
+  )
+  , list(
+    coords = c(51.07919, 6.85288)
+    , zoom = 15
+  )
+  , list(
+    coords = c(51.09442, 6.86552)
+    , zoom = 16
+  )
+  , list(
+    coords = c(51.09454, 6.74013)
+    , zoom = 16
+  )
+  , list(
+    coords = c(51.05610, 6.61875)
+    , zoom = 16
+  )
+  , list(
+    coords = c(50.86299, 6.36982)
+    , zoom = 13
+  )
+  , list(
+    coords = c(50.90677, 6.53539)
+    , zoom = 13
+  )
+  , list(
+    coords = c(51.06580, 6.44824)
+    , zoom = 13
+  )
+  , list(
+    coords = c(50.98711, 6.59930)
+    , zoom = 15
+  )
+  , list(
+    coords = c(51.19925, 6.22950)
+    , zoom = 15
+  )
+)
+
+# m = leaflet(elementId = "test1") |>
+#   addTiles() |>
+#   setView(13, 49, 8)
+
+m = readRDS("/home/tim/tappelhans/privat/r_stuff/test_scrolly/map.rds")
+
+m = htmlwidgets::onRender(
+  m,
+  JS(
+    "function(el, x, data) {
+       // get the leaflet map
+       var map = this; 
+       debugger;
+       // taken from https://pudding.cool/process/introducing-scrollama/
+       let scroller = scrollama();
+       function handleStepEnter(response) {
+        if (response.index === 0) {
+          $('.leaflet-control-layers-selector')[2].click()
+          //map.addLayer(Object.values(map.layerManager._byGroup['CartoLight'])[0]);
+          map.flyTo(data[response.index].coords, data[response.index].zoom);
+        } else {
+          $('.leaflet-control-layers-selector')[0].click()
+          map.flyTo(data[response.index].coords, data[response.index].zoom);
+        }
+        console.log(response);
+      };
+       scroller
+        .setup({
+					step: '.cr-section .narrative-col .trigger',
+        })
+        .onStepEnter(handleStepEnter);
+    }"
+  )
+  , data = zoom_data
+)
+
+m
+```
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Klimakollektiv Scrollytelling
+
+Lorem Ipsum ...
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Rhein bei Chempark Dormagen
+
+Das Rheintal ist sehr eng verbunden mit den Wassersystemen der Niederlande, z.B. mit dem
+großen Mündungsgebiet von Rhein, Maas und IJssel. Daher muss die Europäische Wasser-
+rahmenrichtlinie (2000/60/EG; EU-WRRL) unbedingt und unverzüglich umgesetzt werden.
+
+<br>
+
+Rheinwasser enthält große Mengen von gesundheitsgefährdenden Medikamenten-, Kohlen-
+wasserstoff- und Düngemittelresten sowie weiterer Chemikalien und Mikroplastik. All diese
+Schadstoffe haben auch in geringen Konzentrationen nichts in den zukünftigen Seen und
+Naturschutzgebieten zu suchen. Es ist keine entsprechende Reinigungsstufe vorgesehen, um
+den Schadstoffeintrag ins Ökosystem zu vermeiden; dies muss umgehend vor einer Geneh-
+migung eingeplant werden.
+
+
+:::
+
+
+:::{focus-on="cr-setup_map"}
+
+## Entnahmebauwerk bei “Haus Piwip”
+
+Das Entnahmebauwerk liegt direkt am Prallhang, nur wenig rheinabwärts vom Chempark
+Dormagen, und dringt tief in den Grundwasserkörper ein. Die Folgen sind nicht ausreichend untersucht und stellen eine Gefährdung dar.
+
+<br> 
+
+Zur Quantität der Wasserentnahme:
+
+<br>
+
+Der Klimawandel wird uns stark schwankende Niederschlagsmengen bringen. Dadurch wird
+die Entnahmemenge aus dem Rhein erheblich von den Planungen abweichen. Ebenso wird
+das Abschmelzen der Gletscher sehr stark dazu beitragen, dass weniger Rheinwasser zur 
+Verfügung stehen wird. Nach Schätzungen von Glaziologen ist die Quelle des Rheins, 
+der vom Gletscherwasser lebt, in 30 bis 40 Jahren versiegt. 
+
+<br>
+
+Auch die Bedürfnisse der Schifffahrt sowie die Trinkwasser-Gewinnung in den Niederlanden
+müssen berücksichtigt werden. Bei zu geringem Rheinwasserstand strömt bei Flut viel mehr
+Wasser in den Mündungstrichter der großen Flüsse und versalzt dadurch die 
+Trinkwasserbrunnen, die dort hauptsächlich Rheinuferfiltrat ziehen.
+
+<br>
+
+Experten gehen davon aus, dass aus o.g. Gründen wesentlich weniger als die von RWE 
+geplanten 18m3/sec entnommen werden können.
+
+<br>
+
+Das Thema „Verdunstung“ wird nur an einer Stelle in einer Matrix erwähnt, aber nicht weiter
+untersucht oder quantifiziert.
+
+:::
+
+
+:::{focus-on="cr-setup_map"}
+
+## Rheinwassertransportleitung z.B. Wald-NSG bei Knechtsteden
+
+Zum Bau der RWTL wird ein ca. 70m breiter und letztendlich 45 km langer Streifen als „Bau-
+platz“ benötigt. Für die Trasse müssen Biotope durchschnitten, Bäume gefällt und grundwas-
+serführende Schichten durchtrennt werden. Zu errichtende Gebäude dringen tief in den 
+Grundwasserkörper ein. <br>
+Die Folgen sind nicht ausreichend untersucht und stellen eine Gefährdung dar.
+
+<br>
+
+Mögliche Beschädigung der Rohrleitung
+<br>
+Durch das fließende Wasser entsteht ein Abrieb der Kunststoffbeschichtung der wasser-
+führenden Leitungen, wodurch weitere Mikroplastikpartikel in den See gespült werden. 
+Auch das darf nicht geschehen.
+
+<br>
+
+Des weiteren kann durch die geringe Verlegetiefe bzw. Überdekkung der RWTL in landwirt-
+schaftlich genutzten Flächen durch das Überfahren mit landwirtschaftlichen Großgeräten, 
+die beladen bis zu 50 t wiegen, eine Beschädigung eintreten.
+
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Verteilerbauwerk Allrath 
+
+Von hier aus werden zwei Rohre in Richtung Hambacher Tagebau, eins zum Tagebau 
+Garzweiler und möglicherweise eins in Richtung der Naturgebiete Schwalm-Nette verlegt.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Die Seen bei Inden, Hambach und Garzweiler
+
+Aus dem unter (1) Gesagten ergibt sich Grund zur Sorge, dass diese Löcher eher nie als in
+sehr optimistisch prognostizierten 40 Jahren mit Wasser gefüllt sein werden; nachgebesserte
+Zeitangaben sprechen mittlerweile von 70 Jahren. Aber auch das wird zu kurz bemessen sein.
+
+<br>
+
+In der Grube lagern große Mengen an Schadstoffen, vor allem auch das Säure bildende Pyrit.
+Geplant ist zwar ein Überdecken dieser Schicht mit einer immens großen Kalkmenge; aber es
+ist unbestritten, dass sich am Grund des Sees eine sog. Todeszone vor allem aus giftigen Be-
+standteilen im Erdreich und entstandener Schwefelsäure entwickeln wird. Das Wasser wird in
+die umgebenden Böschungen hineindiffundieren und dort das Pyrit bzw. das entstehende
+Sulfat aus dem Lockergestein auswaschen und den derzeit zur Trinkwassergewinnung 
+genutzten Grundwasserleiter 8 unbrauchbar machen (Sulfat z.T. >1000 mg/l erwartet).
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+Ob die Seewasserqualität in absehbarer Zukunft eine Freizeitnutzung mit Wasserkontakt zu-
+lässt, ist sehr zu hinterfragen. Wir sehen auch im ostdeutschen Braunkohlerevier, dass z.T.
+ständig zur Neutralisierung gekalkt werden bzw. der Zugang zum Wasser verwehrt werden
+muss. Auch das aufsteigende Grundwasser rundherum reagiert mit dem oxidierten Pyrit zu
+H2SO4 und trägt diese Schwefelsäure mit nach oben.
+
+<br>
+
+<small>(Anm.: Diese Oxidation findet auch im gewachsenen Erdreich statt, weil dort, wo das Grundwasser ehemals gesümpft wurde, Sauerstoff Zutritt zum Pyrit hatte.)</small>
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+Außerdem wird sich als zweites Verwitterungsprodukt des Pyrits in großen Mengen Ocker
+bilden, dessen Entfernung aus dem Wasser und Entsorgung an keiner Stelle mitgeplant
+wurde.
+
+<br>
+
+Vergleicht man die unglaubliche Tiefe der Seen mit der viel geringeren Tiefe der Restseen in
+der Lausitz und die sich ständig ereignenden Hangrutschungen dort, erscheint es mehr als
+fraglich, ob es ausreicht, die Hänge wie geplant nur im oberen Bereich auf ein Gefälle von 1:5
+oder 1:7 auszulegen, wenn in unteren Bereichen wesentlich steilere Böschungen und die
+aufgrund des unterschiedlichen Materials und der stattfindenden Durchweichung großen
+Rutschungsgefahren bestehen bleiben.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Erdbebengefahrenzone z.B. Peringsmaar
+
+WDR am 28.08.2024: “Leichtes Erdbeben bei Bergheim. Der Erdstoß wurde in 1 km Tiefe aus-
+gelöst, auf der Fläche des ehemaligen Tagebaus Fortuna Garsdorf bei Bergheim-Paffendorf”
+
+<br>
+
+Das Braunkohlegebiet steht geologisch in engem Zusammenhang mit der Erdbebenzone III
+im Aachener Raum. Dies wird noch bestärkt durch alte Bergbaustollen, die aus einem älteren
+Bergbau stammend, sich z.B. unterhalb des Hambacher Tagebaus befinden.
+
+<br>
+
+Diesbezügliche Gefährdungen - z.B. die Standfestigkeit der Grube oder die „Dichtheit des
+Seegrundes“ - werden an keiner Stelle thematisiert und/oder untersucht.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+##  Gefährdung der Feuchtgebiete z.B. Schwalm a.d. Pannenmühle
+
+Ein Teil des Rheinwassers soll bis die Füllhöhe des Garzweiler Tagebaus erreicht wird, direkt
+in die Feuchtgebiete Schwalm/Nette geleitet werden, um diese zu erhalten.
+
+<br>
+
+Danach soll die Niers aus dem Überlauf des Garzweiler Sees durch den sog. „Nierscanyon“
+gespeist werden. Durch beide Einspeisungen werden oben schon beschriebene Schadstoffe
+in diese Biotope gelangen und ebenfalls das Grundwasser kontaminieren.
+
+<br>
+
+Allerdings ist die Zuleitung des Rheinwassers bis zu den NSGen nicht mit beantragt.
+Aus Kreisen des BUND wurde berichtet, dass ebenfalls die Möglichkeit diskutiert wird, die
+Feuchtgebiete ebenfalls aus der angedachten Trinkwasserleitung (s.u. 7) aus dem Binsheimer
+Feld zu speisen.
+
+:::
+
+:::
+
+
