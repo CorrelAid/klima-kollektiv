@@ -8,6 +8,7 @@ format:
     #   narrative-background-color-sidebar: "#ffccff"
     #   narrative-text-color-sidebar: "#808080"
     #   section-background-color: "#ccffff"
+lightbox: true
 ---
 
 :::{.cr-section}
@@ -80,7 +81,7 @@ zoom_data = list(
 #   addTiles() |>
 #   setView(13, 49, 8)
 
-m = readRDS("/Users/pauli/Documents/Paula/CorrelAid/Klima*-Kollektiv/klima-kollektiv/closeread/r_scrolly_map/map.rds")
+m = readRDS("map.rds")
 
 m = htmlwidgets::onRender(
   m,
@@ -122,6 +123,8 @@ m
 ## Klimakollektiv Scrollytelling
 
 Lorem Ipsum ...
+
+![](../pics/test.png)
 
 :::
 
