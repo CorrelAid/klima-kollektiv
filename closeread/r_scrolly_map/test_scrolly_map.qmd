@@ -131,6 +131,7 @@ m
 ## Das Ende der Braunkohle und wo bleibt unser Wasser? 
 
 Nach dem Ende des Braunkohleabbaus bleiben im Rheinischen Revier drei riesige Löcher übrig, mit denen etwas geschehen muss. 
+
 ![](../pics/endederbraunkohle.png)
 <br>
 
@@ -178,6 +179,7 @@ Die RIWA Rijn (Verneigung van Rivierwaterbedrijven) veröffentlich jedes Jahr de
 <br>
 
 Der vorliegende Fokus bezieht sich auf die Beprobung in Lobith an der deutsch-niederländischen Grenze. Wir versuchen hier eine visuelle Darstellung dieser Belastung des Rheinwasser an überwiegend organischen Bestandteilen, ohne die Salzfracht und der allgemeinen Rheinwasserparameter. Die Darstellung vernachlässig, dass in Dormagen evtl. etwas weniger Fracht im Rhein mitgeführt wird als ca. 100 km weiter Flussabwärts.
+
 ![](../pics/belastungwasser.png)
 
 <br>
@@ -474,7 +476,7 @@ Eine zusätzliche Gefährdung entsteht durch die Mobilisierung von Altlasten aus
 
 :::
 
-###Vielen Dank fürs Lesen!
+<h1>Vielen Dank fürs Lesen!</h1>
 
 <p>Hrsg.: Wasserbündnis Rheinisches Revier</p>
 
@@ -484,7 +486,7 @@ Eine zusätzliche Gefährdung entsteht durch die Mobilisierung von Altlasten aus
 </p>
 
 <p>Die Fotos von der „schönen neuen Welt“ sind Veröffentlichungen der Neuland-Hambach-GmbH entnommen worden.</p>
-<p>Für Zeichnungen: Jari Banas</p>
+<p>Zeichnungen: Jari Banas</p>
 <p>Erstellt von <a href="https://klimakollektiv.org/" target="_blank">Klima*Kollektiv</a> und <a href="https://correlaid.org/" target="_blank">CorrelAid</a></p>
 
 <p>Scrollytelling ermöglicht durch die 
