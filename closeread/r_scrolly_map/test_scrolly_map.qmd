@@ -89,7 +89,7 @@ zoom_data = list(
 #   addTiles() |>
 #   setView(13, 49, 8)
 
-m = readRDS("/Users/pauli/Documents/Paula/CorrelAid/Klima*-Kollektiv/klima-kollektiv/closeread/r_scrolly_map/map.rds")
+m = readRDS("map.rds")
 
 m = htmlwidgets::onRender(
   m,
@@ -144,6 +144,8 @@ Daraus folgt: die Gruben müssen gefüllt werden, weil nur so ein ausreichend ho
 
 Wir beobachten das Geschehen kritisch, haben Forderungen zur Umsetzung und zu den Ewigkeitslasten. Hier muss das Verursacherprinzip gelten und es dürfen keine Kosten auf die Bevölkerung abgewälzt werden.
 
+
+![](../pics/test.png)
 
 :::
 
