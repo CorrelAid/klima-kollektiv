@@ -4,6 +4,7 @@ format:
   closeread-html:
     css: my_styles.css # needed to display map correctly
     embed-resources: true
+    remove-header-space: true
     # cr-style:
     #   narrative-background-color-sidebar: "#ffccff"
     #   narrative-text-color-sidebar: "#808080"
@@ -57,7 +58,7 @@ zoom_data = list(
   )
   , list(
     coords = c(50.891811508393985, 6.608945338125196) #Manheimer Loch
-    , zoom = 13
+    , zoom = 14
   )
   , list(
     coords = c(50.98711, 6.59930) #Erdbebengefahrenzone
@@ -132,7 +133,10 @@ m
 
 Nach dem Ende des Braunkohleabbaus bleiben im Rheinischen Revier drei riesige Löcher übrig, mit denen etwas geschehen muss. 
 
+<br>
+
 ![](../pics/endederbraunkohle.png)
+
 <br>
 
 Würden die Pumpen, die bisher den Grubenboden trocken halten, einfach abgestellt und die Löcher sich selbst überlassen, würden wahrscheinlich mehrere Hundert Jahre vergehen, bis sich die Löcher mit dem wieder aufsteigenden Grundwasser gefüllt hätten. Regen bzw. Starkregenereignisse und nachfolgendes Hochwasser könnten Hangrutschungen verursachen sowie den Eintrag von Giftstoffen aus dem benachbarten Erdreich begünstigen. Außerdem könnte aufsteigendes Grundwasser Böschungsbereiche ins Loch drücken. Dadurch kann es ebenfalls zu Hangrutschungen kommen, wodurch dann auch Ortschaften in Mitleidenschaft gezogen würden.
@@ -145,8 +149,6 @@ Daraus folgt: die Gruben müssen gefüllt werden, weil nur so ein ausreichend ho
 
 Wir beobachten das Geschehen kritisch, haben Forderungen zur Umsetzung und zu den Ewigkeitslasten. Hier muss das Verursacherprinzip gelten und es dürfen keine Kosten auf die Bevölkerung abgewälzt werden.
 
-
-![](../pics/test.png)
 
 :::
 
@@ -174,6 +176,8 @@ Die RIWA Rijn (Verneigung van Rivierwaterbedrijven) veröffentlich jedes Jahr de
 <br>
 
 Der vorliegende Fokus bezieht sich auf die Beprobung in Lobith an der deutsch-niederländischen Grenze. Wir versuchen hier eine visuelle Darstellung dieser Belastung des Rheinwasser an überwiegend organischen Bestandteilen, ohne die Salzfracht und der allgemeinen Rheinwasserparameter. Die Darstellung vernachlässig, dass in Dormagen evtl. etwas weniger Fracht im Rhein mitgeführt wird als ca. 100 km weiter Flussabwärts.
+
+<br>
 
 ![](../pics/belastungwasser.png)
 
@@ -251,7 +255,9 @@ Die Folgen sind nicht ausreichend untersucht und stellen eine Gefährdung dar.
 <br>
 
 Mögliche Beschädigung der Rohrleitung
+
 <br>
+
 Durch das fließende Wasser entsteht ein Abrieb der Kunststoffbeschichtung der wasser-
 führenden Leitungen, wodurch weitere Mikroplastikpartikel in den See gespült werden. 
 Auch das darf nicht geschehen.
@@ -327,6 +333,9 @@ Rutschungsgefahren bestehen bleiben.
 
 :::{focus-on="cr-setup_map"}
 ## Das Manheimer Loch und das Wasser
+
+<br>
+
 ![](../pics/manheimerbucht1.png)
 
 Ein wichtiges Trittsteinbiotop zwischen dem Hambacher Wald und dem Flora-Fauna-Habitat (FFH) Steinheide war bis Ende Januar 2025 das „Sündenwäldchen“ bei Kerpen-Manheim mit seinen 6 ha Fläche, ein Stieleichen-Hainbuchen-Wald. Streng geschützte Tierarten wie die Haselmaus und die Bechstein-Fledermaus hatten dort - genau wie geschützte Bäume - ihren Lebensraum. Hambacher Wald, Sündenwäldchen und Steinheide wurden durch das Manheimer Fließ und seinem beidseitigen Bewuchs mit Bäumen und Hartholzsträuchern vernetzt. Für den Wasserhaushalt der Region ist dieses Fließ, neben vielen anderen, unentbehrlich.
@@ -335,7 +344,11 @@ Ein wichtiges Trittsteinbiotop zwischen dem Hambacher Wald und dem Flora-Fauna-H
 
 Greenpeace schrieb dazu: „Den ‚Sündenwald‘ als Teil eines lebenswichtigen Biotopverbundes zu roden (...) ist ein Umweltverbrechen. Wer den Hambacher Wald erhalten will, darf seine Lebensadern nicht kappen. Der Braunkohlekonzern RWE, die grüne Wirtschaftsministerin Mona Neubaur beziehungsweise der grüne Umweltminister Oliver Krischer müssen die Vorbereitungen zur Rodung sofort stoppen.“
 
+<br>
+
 ![](../pics/manheimerbucht2.png)
+
+<br>
 
 Laut RWE soll das Material aus der sog. Manheimer Bucht für den Aufbau von stabilen und sicheren Böschungen u.a. im Bereich Elsdorf verwendet werden. Wieder einmal sollen die besten Böden Deutschlands mit Genehmigung einer Landesregierung unwiederbringlich zerstört werden.
 
@@ -343,13 +356,18 @@ Laut RWE soll das Material aus der sog. Manheimer Bucht für den Aufbau von stab
 
 Irrsinn ist es doch, wenn dieser Lössboden mit sehr hoher Bodenwertigkeit (~ 95 von 100) auf der Innenkippe der Sophienhöhe aufgebracht werden, um dann dort in einigen Jahren Landwirtschaft betreiben zu können. Aufschüttungen erreichen nie die Qualität von gewachsenen Bodenstrukturen. Auch Begrifflichkeiten werden aus dem Gedächtnis entfernt: Wer kennt noch die „Jülich-Zülpicher-Börde“? Die geringe Anzahl der LKW, beladen mit Material aus dem Manheimer Loch, die Elsdorf ansteuern, wirft die Frage auf: was geschieht mit dem Großteil des gebaggerten Materials? Kann denn ausgeschlossen werden, dass mit dem übrigen Material, größtenteils Sand und Kies, RWE aus dem Tagebau zusätzlich ‚Kohle macht‘?
 
+<br>
+
 ![](../pics/manheimerbucht3.png)
 
 <br>
 
 Durch das nahe Heranbaggern an noch bestehende Waldstrukturen wird den Wurzelregionen der Bäume noch mehr Wasser entzogen, sodass der Fortbestand auch dieser Wälder stark gefährdet ist. Der Hambacher Wald darf nicht durch weitere Abbaggerungen zu einer Halbinsel werden. Durch die nahegelegenen Kiesgruben südlich des Hambacher Waldes fehlen diesem sowieso schon jetzt große Mengen an Grundwasser.
 
+<br>
+
 ![](../pics/manheimerbucht4.png)
+
 <br>
 
 Das Manheimer Loch, in einigen Plänen als Energiebucht bezeichnet und in Hochglanzdarstellungen gepriesen mit schwimmenden PV-Anlagen und im Wasser stehenden Windkraftanlagen, soll dem größten CO2–Emittenten Europas endlich das grüne Lügenmäntelchen umhängen.
@@ -362,6 +380,8 @@ Die Europäische Union hat 2024 die Richtlinie über Umweltkriminalität beschlo
 <br>
 
 Um die Schäden an Natur und Umwelt nicht noch größer werden zu lassen, muss ein sofortiger Stopp der Braunkohleförderung und ein Ende der Flächenvernichtung durch RWE erfolgen. Weder in Hambach noch in Garzweiler darf der Tagebau vergrößert werden. Es ist geboten, die ‚Restseen‘ zu verkleinern. Wir fordern ein echtes Moratorium (Nachdenken) von unabhängigen Expert:innen, um endlich naturbasierte Lösungen für die anstehende Problemstellungen zu finden.
+
+<br>
 
 ![](../pics/manheimerbucht5.png)
 
@@ -411,7 +431,11 @@ Aus Kreisen des BUND wurde berichtet, dass ebenfalls die Möglichkeit diskutiert
 Feuchtgebiete ebenfalls aus der angedachten Trinkwasserleitung (s.u. 7) aus dem Binsheimer
 Feld zu speisen.
 
+<br>
+
 ![](../pics/feuchtgebiete.png)
+
+<br>
 
 :::
 
@@ -457,6 +481,19 @@ Des weiteren stellt sich die Frage: Warum ist die Bergbaubehörde für wasserrec
 Die Teilgenehmigungen zum Bau der RWTL und der Wasserentnahme bei Dormagen werden  beantragt, ohne die wasserrechtliche Genehmigung zur Einleitung des Rheinwassers in die  Tagebaue und die Feuchtbiotope Schwalm/Nette gleichzeitig mit zu beantragen. Durch diese  Vorwegnahme werden wieder Sachzwänge geschaffen, die letztendlich zu der Einleitung des  Rheinwassers in die Braunkohlegruben und die Schutzgebiete führen.
 Es ist bislang nicht ersichtlich, wie die RWTL von Garzweiler aus weitergebaut werden soll.
 
+<br>
+
+![](../pics/NEULAND-HAMBACH-Rahmenplan-Hambach-Einleitbauwerk Porta Sofia.jpg)
+
+<br>
+
+![](../pics/NEULAND-HAMBACH-Rahmenplan-Hambach-Gesamtplan-2040.jpg)
+
+<br>
+
+![](../pics/NEULAND-HAMBACH-See-2070.jpg)
+
+<br>
 
 :::
 
