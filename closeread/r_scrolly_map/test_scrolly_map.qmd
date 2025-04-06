@@ -69,7 +69,7 @@ zoom_data = list(
     , zoom = 15
   )
   , list(
-    coords = c(51.5035177, 6.6933266) #Gefährdung der Trinkwasserversorgung
+    coords = c(51.5035177, 6.6933266) #Gefährdung der Trinkwasserversorgung Binsheimer Feld
     , zoom = 15
   )
   , list(
@@ -422,17 +422,17 @@ Danach soll die Niers aus dem Überlauf des Garzweiler Sees durch den sog. „Ni
 
 Allerdings ist die Zuleitung des Rheinwassers bis zu den NSGen nicht mit beantragt. Aus Kreisen des BUND wurde berichtet, dass ebenfalls die Möglichkeit diskutiert wird, die Feuchtgebiete ebenfalls aus der angedachten Trinkwasserleitung (s.u. 7) aus dem Binsheimer Feld zu speisen.
 
-<br>
-
-![](../pics/feuchtgebiete.png)
-
-<br>
-
 :::
 
 :::{focus-on="cr-setup_map"}
 
 ##  Gefährdungen der Trinkwasserversorgung z.B. im Binsheimer Feld 
+
+<br>
+
+![](../pics/trinkwasser_gefaehrdung.png)
+
+<br>
 
 Das Land NRW ist sehr stark betroffen von großen wasserwirtschaftlichen und -technischen Herausforderungen, die sich sowohl auf die Bausubstanz, die Landwirtschaft und die Versorgung der Bevölkerung mit sauberem Trinkwasser auswirken. Linksrheinisch gibt es riesige Sümpfungsgebiete durch den Braun- und Steinkohleabbau, die Salzbergwerke sowie Veränderungen des Grundwasserspiegels durch den großflächigen Kiesabbau. Zwischen diesen Standorten zeigen sich unerklärliche Grundwasseranstiege. Ohne eine Gesamtbetrachtung darf nicht weiter in den Wasserhaushalt der Region eingegriffen werden. Schließlich hat das Rheinische Revier durch die Sümpfungsmaßnahmen ein Grundwasserdefizit von 20 Mrd. Kubikmeter Wasser. Laut einer Untersuchung verliert Deutschland im globalen Ranking das meiste Wasser (siehe Grace-Mission des Global Institute for Water Security 2022).
 
@@ -484,16 +484,6 @@ Aus dem Antrag ist nicht klar ersichtlich, was die RWE Power AG denn nun beantra
 
 Des weiteren stellt sich die Frage: Warum ist die Bergbaubehörde für wasserrechtliche Genehmigungen zuständig? Insbesondere ergeben sich folgende Problemlagen:
 
-:::
-
-:::{focus-on="cr-setup_map"}
-
-Die Teilgenehmigungen zum Bau der RWTL und der Wasserentnahme bei Dormagen werden beantragt, ohne die wasserrechtliche Genehmigung zur Einleitung des Rheinwassers in die Tagebaue und die Feuchtbiotope Schwalm/Nette gleichzeitig mit zu beantragen. Durch diese Vorwegnahme werden wieder Sachzwänge geschaffen, die letztendlich zu der Einleitung des Rheinwassers in die Braunkohlegruben und die Schutzgebiete führen.
-
-<br>
-
-Es ist bislang nicht ersichtlich, wie die RWTL von Garzweiler aus weitergebaut werden soll.
-
 <br>
 
 ![](../pics/NEULAND-HAMBACH-Rahmenplan-Hambach-Einleitbauwerk Porta Sofia.jpg)
@@ -505,6 +495,18 @@ Es ist bislang nicht ersichtlich, wie die RWTL von Garzweiler aus weitergebaut w
 <br>
 
 ![](../pics/NEULAND-HAMBACH-See-2070.jpg)
+
+<br>
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+Die Teilgenehmigungen zum Bau der RWTL und der Wasserentnahme bei Dormagen werden beantragt, ohne die wasserrechtliche Genehmigung zur Einleitung des Rheinwassers in die Tagebaue und die Feuchtbiotope Schwalm/Nette gleichzeitig mit zu beantragen. Durch diese Vorwegnahme werden wieder Sachzwänge geschaffen, die letztendlich zu der Einleitung des Rheinwassers in die Braunkohlegruben und die Schutzgebiete führen.
+
+<br>
+
+Es ist bislang nicht ersichtlich, wie die RWTL von Garzweiler aus weitergebaut werden soll.
 
 <br>
 
