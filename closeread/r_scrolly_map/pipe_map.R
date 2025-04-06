@@ -3,7 +3,6 @@ library(sf)
 library(lwgeom) # for st_split
 library(fontawesome)
 
-# data_path = "/home/tim/tappelhans/privat/correlaid/2024_klimakollektiv/klima-kollektiv/data"
 data_path = "data" # as we assume we are at the project level
 
 # add data layers
@@ -170,7 +169,6 @@ map = addPolygons(
 
 # 2.2. line data
 # pipelines
-
 map = addPolylines(
   map
   , data = pipelines_new
@@ -190,7 +188,6 @@ map = addPolylines(
 
 # 2.3. point data
 # destructions
-
 map = addAwesomeMarkers(
   map
   , data = destructions
