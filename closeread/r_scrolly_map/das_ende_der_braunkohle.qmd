@@ -1,0 +1,564 @@
+---
+title: ""
+format: 
+  closeread-html:
+    embed-resources: true
+    remove-header-space: true
+lightbox: true
+---
+
+```{css, echo = FALSE}
+/* this is needed for making the map in the html visible - do not delete! */
+.html-widget {
+    width: 1200px !important;
+    height: 800px !important;
+}
+```
+
+:::{.cr-section}
+
+:::{#cr-setup_map}
+
+```{r, setup_map}
+library(leaflet)
+
+zoom_data = list(
+  list(
+    coords = c(50.97919, 6.65288) #Das Ende der Braunkohle
+    , zoom = 10.5
+  )
+  , list(
+    coords = c(51.07919, 6.85288) #Rhein bei Chempark Dormagen
+    , zoom = 15
+  )
+  , list(
+    coords = c(51.84820, 6.10937) #Belastung (Fracht) des Rheinwassers
+    , zoom = 13
+  )
+  , list(
+    coords = c(51.09442, 6.86552) #Entnahmebauwerk
+    , zoom = 16
+  )
+  , list(
+    coords = c(51.09454, 6.74013) #Rheinwassertransportleitung
+    , zoom = 16
+  )
+  , list(
+    coords = c(51.05610, 6.61875) #Verteilerbauwerk
+    , zoom = 16
+  )
+  , list(
+    coords = c(50.86299, 6.36982) #Die Seen 1
+    , zoom = 13
+  )
+  , list(
+    coords = c(50.90677, 6.53539) #Die Seen 2
+    , zoom = 13
+  )
+  , list(
+    coords = c(51.06580, 6.44824) #Die Seen 3
+    , zoom = 13
+  )
+  , list(
+    coords = c(50.891811508393985, 6.608945338125196) #Manheimer Loch
+    , zoom = 14
+  )
+  , list(
+    coords = c(50.98711, 6.59930) #Erdbebengefahrenzone
+    , zoom = 15
+  )
+  , list(
+    coords = c(51.19925, 6.22950) #Gefährdung der Feuchtgebiete
+    , zoom = 15
+  )
+  , list(
+    coords = c(51.5035177, 6.6933266) #Gefährdung der Trinkwasserversorgung Binsheimer Feld
+    , zoom = 15
+  )
+  , list(
+    coords = c(50.93590, 6.53242) #Rechtliche Fragen (Porta Sofia) 2
+    , zoom = 15
+  )
+  , list(
+    coords = c(51.05089, 6.56347) #Rechtliche Fragen (Porta Sofia) 1
+    , zoom = 15
+  )
+  , list(
+    coords = c(51.18355, 6.49917) #Verschlechterungsverbot
+    , zoom = 18
+  )
+  , list(
+    coords = c(50.97919, 6.65288) #Wasser ist das wichtigste Gut
+    , zoom = 10.5
+  )
+)
+
+# generate 'map.rds' by running script 'pipe_map.R' prior to rendering this qmd!
+m = readRDS("map.rds")
+
+m = htmlwidgets::onRender(
+  m,
+  JS(
+    "function(el, x, data) {
+       // get the leaflet map
+       var map = this; 
+       // debugger;
+       // taken from https://pudding.cool/process/introducing-scrollama/
+       let scroller = scrollama();
+       function handleStepEnter(response) {
+        if (response.index === 0) {
+          $('.leaflet-control-layers-selector')[2].click()
+          //map.addLayer(Object.values(map.layerManager._byGroup['CartoLight'])[0]);
+          map.flyTo(data[response.index].coords, data[response.index].zoom);
+        } else {
+          $('.leaflet-control-layers-selector')[0].click()
+          map.flyTo(data[response.index].coords, data[response.index].zoom);
+        }
+        console.log(response);
+      };
+       scroller
+        .setup({
+					step: '.cr-section .narrative-col .trigger',
+        })
+        .onStepEnter(handleStepEnter);
+    }"
+  )
+  , data = zoom_data
+)
+
+m
+```
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Das Ende der Braunkohle und wo bleibt unser Wasser? 
+
+Nach dem Ende des Braunkohleabbaus bleiben im Rheinischen Revier drei riesige Löcher übrig, mit denen etwas geschehen muss.
+
+<br>
+
+![](../pics/endederbraunkohle.png)
+
+<br>
+
+Würden die Pumpen, die bisher den Grubenboden trocken halten, einfach abgestellt und die Löcher sich selbst überlassen, würden wahrscheinlich mehrere Hundert Jahre vergehen, bis sich die Löcher mit dem wieder aufsteigenden Grundwasser gefüllt hätten. Regen bzw. Starkregenereignisse und nachfolgendes Hochwasser könnten Hangrutschungen verursachen sowie den Eintrag von Giftstoffen aus dem benachbarten Erdreich begünstigen. Außerdem könnte aufsteigendes Grundwasser Böschungsbereiche ins Loch drücken. Dadurch kann es ebenfalls zu Hangrutschungen kommen, wodurch dann auch Ortschaften in Mitleidenschaft gezogen würden.
+
+<br>
+
+Daraus folgt: die Gruben müssen gefüllt werden, weil nur so ein ausreichend hoher Druck gegen die Böschungen entsteht, der diese dann (ausreichend?) stabilisiert. Es wurde entschieden, die Gruben und die Naturschutzgebiete mit Rhein-Wasser zu füllen. Voraussichtliche Dauer dieser Art der Befüllung: 40 + x Jahre. Die tatsächliche Dauer wird davon abhängen, wieviel Regen es zukünftig noch geben wird, wieviel Wasser aus den Alpen noch den Rhein hinunterfließen kann bei fortschreitendem Abschmelzen der Gletscher, welche Wasserstände für die Aufrechterhaltung der Schifffahrt herrschen müssen, wie groß die Verdunstung über den Seeoberflächen im Sommer sein wird und wieviel Wasser in den Seen versickert… Diese Umstände sind größtenteils noch nicht erfasst bzw. untersucht.
+
+<br>
+
+Wir beobachten das Geschehen kritisch, haben Forderungen zur Umsetzung und zu den Ewigkeitslasten. Hier muss das Verursacherprinzip gelten und es dürfen keine Kosten auf die Bevölkerung abgewälzt werden.
+
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Rhein bei Chempark Dormagen
+
+Das Rheintal ist sehr eng verbunden mit den Wassersystemen der Niederlande, z.B. mit dem großen Mündungsgebiet von Rhein, Maas und IJssel. Daher muss die Europäische Wasserrahmenrichtlinie (2000/60/EG; EU-WRRL) unbedingt und unverzüglich umgesetzt werden.
+
+<br>
+
+Rheinwasser enthält große Mengen von gesundheitsgefährdenden Medikamenten-, Kohlenwasserstoff- und Düngemittelresten sowie weiterer Chemikalien und Mikroplastik. All diese Schadstoffe haben auch in geringen Konzentrationen nichts in den zukünftigen Seen und Naturschutzgebieten zu suchen. Es ist keine entsprechende Reinigungsstufe vorgesehen, um den Schadstoffeintrag ins Ökosystem zu vermeiden; dies muss umgehend vor einer Genehmigung eingeplant werden.
+
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Belastung (Fracht) des Rheinwassers
+
+Unser Ziel ist, es die Qualität bzw. Belastung des Rheinwassers an der Entnahmestelle in Dormagen darzustellen. Leider stehen uns dafür keine Daten direkt von Dormagen zur Verfügung.
+
+<br>
+
+Grundlage unserer Recherche ist der „RIWA Jahresbericht 2023 – Der Rhein“.
+
+<br>
+
+Die RIWA Rijn (Vereniging van Rivierwaterbedrijven) veröffentlich jedes Jahr einen Bericht zur Rheinwasserqualität. Dieser Bericht stellt das jährliche Monitoring der an verschiedenen Messstellen dar. Das Monitoring umfasst eine mindestens monatliche Beprobung und Analytik unendlich vieler Parameter, Substanzen und Stoffgruppen im Wasser.
+
+<br>
+
+Die vorliegenden Ergebnisse beziehen sich auf die Beprobung des Rheinwassers in Lobith an der deutschniederländischen Grenze. Die Visualisierung zeigt die Belastung durch überwiegend organische Bestandteile ohne die Salzfracht und ohne die allgemeinen Rheinwasserparameter. Außerdem werden hier die meisten Mineralien, die im Rheinwasser gefunden wurden, ignoriert. Die Darstellung vernachlässigt, dass in Dormagen evtl. etwas weniger Fracht im Rhein mitgeführt wird als ca. 150 km weiter flussabwärts.
+
+<br>
+
+![](../pics/belastungwasser.png)
+
+<br>
+
+Dargestellt werden die Belastung des Rheinwassers durch Medikamentenrückstände, Pflanzenschutzmittel, Industriechemikalien und andere Stoffe. Die Fracht an Mikroplastik wurde grob abgeschätzt anhand anderer Datenquellen. Da sich bisher die Schadstoffbelastung innerhalb gesetzlicher Grenzwerte bewegt, wird von einer Eignung des Rheinwassers zur Befüllung der Tagebau-Restseen ausgegangen.
+
+<br>
+
+Die Summe der Stoffgruppen wird in ng/l oder μg/l gemessen. Die meisten Substanzen haben relevante Belastungsgrenzen von 0,1 μg/l oder 1 μg/l.
+
+<br>
+
+Da sich der Mensch diese kleinen Einheiten kaum vorstellen kann, wurde diese Belastung - ausgehend vom Volumen der jährlichen Wasserentnahme von rund 430 Mio. m³ für die Rheinwassertransportleitung - auf eine Tagesentnahme von ca. 931507 m³ umgerechnet.
+
+<br>
+
+<b>Es wird hier die Belastung in kg je Tag = für 931507 m³ Rheinwasser dargestellt. Diese tägliche Belastung beträgt ca. 43 kg gesundheitsschädliche bis toxische Fracht.</b>
+
+<br>
+
+Nun können wir uns vorstellen, dass diese Fracht in ein 60 Liter Fass, wie es in der Industrie oft benutzt wird, passt. Diese Fracht bzw. dieses Fass rollt nun täglich durch die Rheinwassertransportleitung (RWTL).
+
+<br>
+
+Dieses Fass macht den Unterschied zu „sauberem Wasser“, z. B. zu Quellwasser.
+
+<br>
+
+Jetzt stellen wir uns vor: wir stehen am geplanten Wasserfall am „terra-nova“ und schauen uns dieses Spektakel des „R(h)einfalls“ dort an.
+
+<br>
+
+<b>Täglich plumpst dann so ein Fass mit giftigen Stoffen in den Restsee.</b><br>
+Würden wir da nicht aufschreien?
+
+<br>
+
+![](../pics/fass.png)
+
+<br>
+
+Wir stellen uns jetzt einmal vor: diese Fässer bleiben sichtbar und schwimmen auf dem See. Wie sieht es dann aus, wenn nach einem Jahr knapp 400 Fässer im Tagebau-Restsee schwimmen und nach 40 Jahren ca. 14.600 Fässer? Was gäbe das für ein Bild? Sagen wir dann auch noch, dass die Belastung des Rheinwassers vernachlässigbar ist?
+
+<br>
+
+<small><small><small>Quelle zur Kalkulation der Belastung:
+RIWA Rijn, Jahresbericht 2023 – Der Rhein, Messtelle in Lobith, Mittelwerte (MW) <br>
+1) Mikroplastik: 191 Mio. Teilchen entsprechen bis zu 30 kg (Quelle: Article, Open access, Published: 08 December 2015 ""Microplastics profile along the Rhine River"" <br>
+"Thomas Mani, Armin Hauk, Ulrich Walter & Patricia Burkhardt-Holm (Leiterin der Studie, die Biologin Prof. Patricia Holm vom Departement Umweltwissenschaften der Universität Basel) <br>
+2) Mikroplastik: Bei Düsseldorf (Rhe_08_NW) und Bimmen (Rhe_09_NW) wurden mit 7,1 bzw. 9,3 Partikeln/m³ Partikel erfasst (Quelle: Quelle: Bericht "Mikroplastik in Binnengewässern Süd und Westdeutschlands" eine Zusammenfassung mittels Grafiken und Tabellen übersichtlich dargestellt. Eine bundesländerübergreifende Untersuchung in BW, BY, HE, NW und RP. (Karlsruhe, Augsburg, Wiesbaden, Recklinghausen, Mainz 2018))</small></small></small>
+
+:::
+
+
+:::{focus-on="cr-setup_map"}
+
+## Entnahmebauwerk bei “Haus Piwip”
+
+Das Entnahmebauwerk liegt direkt am Prallhang, nur wenig rheinabwärts vom Chempark Dormagen, und dringt tief in den Grundwasserkörper ein. Die Folgen sind nicht ausreichend untersucht und stellen eine Gefährdung dar.
+
+<br> 
+
+Zur Quantität der Wasserentnahme:
+
+<br>
+
+Der Klimawandel wird uns stark schwankende Niederschlagsmengen bringen. Dadurch wird die Entnahmemenge aus dem Rhein erheblich von den Planungen abweichen. Ebenso wird das Abschmelzen der Gletscher sehr stark dazu beitragen, dass weniger Rheinwasser zur Verfügung stehen wird. Nach Schätzungen von Glaziologen ist die Quelle des Rheins, der vom Gletscherwasser lebt, in 30 bis 40 Jahren versiegt.
+
+<br>
+
+Auch die Bedürfnisse der Schifffahrt sowie die Trinkwasser-Gewinnung in den Niederlanden müssen berücksichtigt werden. Bei zu geringem Rheinwasserstand strömt bei Flut viel mehr Wasser in den Mündungstrichter der großen Flüsse und versalzt dadurch die Trinkwasserbrunnen, die dort hauptsächlich Rheinuferfiltrat ziehen.
+
+<br>
+
+Experten gehen davon aus, dass aus o.g. Gründen wesentlich weniger als die von RWE geplanten 18m³/sec entnommen werden können.
+
+<br>
+
+Das Thema „Verdunstung“ wird nur an einer Stelle in einer Matrix erwähnt, aber nicht weiter untersucht oder quantifiziert.
+
+:::
+
+
+:::{focus-on="cr-setup_map"}
+
+## Rheinwassertransportleitung z.B. Wald-NSG bei Knechtsteden
+
+Zum Bau der RWTL wird ein ca. 70m breiter und letztendlich 45 km langer Streifen als „Bauplatz“ benötigt. Für die Trasse müssen Biotope durchschnitten, Bäume gefällt und grundwasserführende Schichten durchtrennt werden. Zu errichtende Gebäude dringen tief in den Grundwasserkörper ein. Die Folgen sind nicht ausreichend untersucht und stellen eine Gefährdung dar.
+
+<br>
+
+Mögliche Beschädigung der Rohrleitung
+
+<br>
+
+Durch das fließende Wasser entsteht ein Abrieb der Kunststoffbeschichtung der wasserführenden Leitungen, wodurch weitere Mikroplastikpartikel in den See gespült werden. Auch das darf nicht geschehen.
+
+<br>
+
+Des weiteren kann durch die geringe Verlegetiefe bzw. Überdekkung der RWTL in landwirtschaftlich genutzten Flächen durch das Überfahren mit landwirtschaftlichen Großgeräten, die beladen bis zu 50 t wiegen, eine Beschädigung eintreten.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Verteilerbauwerk Allrath 
+
+Von hier aus werden zwei Rohre in Richtung Hambacher Tagebau, eins zum Tagebau Garzweiler und möglicherweise eins in Richtung der Naturgebiete Schwalm-Nette verlegt.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Die Seen bei Inden, Hambach und Garzweiler
+
+Aus dem unter (1) Gesagten ergibt sich Grund zur Sorge, dass diese Löcher eher nie als in sehr optimistisch prognostizierten 40 Jahren mit Wasser gefüllt sein werden; nachgebesserte Zeitangaben sprechen mittlerweile von 70 Jahren. Aber auch das wird zu kurz bemessen sein.
+
+<br>
+
+In der Grube lagern große Mengen an Schadstoffen, vor allem auch das Säure bildende Pyrit. Geplant ist zwar ein Überdecken dieser Schicht mit einer immens großen Kalkmenge; aber es ist unbestritten, dass sich am Grund des Sees eine sog. Todeszone vor allem aus giftigen Bestandteilen im Erdreich und entstandener Schwefelsäure entwickeln wird. Das Wasser wird in die umgebenden Böschungen hineindiffundieren und dort das Pyrit bzw. das entstehende Sulfat aus dem Lockergestein auswaschen und den derzeit zur Trinkwassergewinnung genutzten Grundwasserleiter 8 unbrauchbar machen (Sulfat z.T. >1000 mg/l erwartet).
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+Ob die Seewasserqualität in absehbarer Zukunft eine Freizeitnutzung mit Wasserkontakt zulässt, ist sehr zu hinterfragen. Wir sehen auch im ostdeutschen Braunkohlerevier, dass z.T. ständig zur Neutralisierung gekalkt werden bzw. der Zugang zum Wasser verwehrt werden muss. Auch das aufsteigende Grundwasser rundherum reagiert mit dem oxidierten Pyrit zu H2SO4 und trägt diese Schwefelsäure mit nach oben.
+
+<br>
+
+<small>(Anm.: Diese Oxidation findet auch im gewachsenen Erdreich statt, weil dort, wo das Grundwasser ehemals gesümpft wurde, Sauerstoff Zutritt zum Pyrit hatte.)</small>
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+Außerdem wird sich als zweites Verwitterungsprodukt des Pyrits in großen Mengen Ocker bilden, dessen Entfernung aus dem Wasser und Entsorgung an keiner Stelle mitgeplant wurde.
+
+<br>
+
+Vergleicht man die unglaubliche Tiefe der Seen mit der viel geringeren Tiefe der Restseen in der Lausitz und die sich ständig ereignenden Hangrutschungen dort, erscheint es mehr als fraglich, ob es ausreicht, die Hänge wie geplant nur im oberen Bereich auf ein Gefälle von 1:5 oder 1:7 auszulegen, wenn in unteren Bereichen wesentlich steilere Böschungen und die aufgrund des unterschiedlichen Materials und der stattfindenden Durchweichung großen Rutschungsgefahren bestehen bleiben.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+## Das Manheimer Loch und das Wasser
+
+<br>
+
+![](../pics/manheimerbucht1.png)
+
+<br>
+
+Ein wichtiges Trittsteinbiotop zwischen dem Hambacher Wald und dem Flora-Fauna-Habitat (FFH) Steinheide war bis Ende Januar 2025 das „Sündenwäldchen“ bei Kerpen-Manheim mit seinen 6 ha Fläche, ein Stieleichen-Hainbuchen-Wald. Streng geschützte Tierarten wie die Haselmaus und die Bechstein-Fledermaus hatten dort - genau wie geschützte Bäume - ihren Lebensraum. Hambacher Wald, Sündenwäldchen und Steinheide wurden durch das Manheimer Fließ und seinem beidseitigen Bewuchs mit Bäumen und Hartholzsträuchern vernetzt. Für den Wasserhaushalt der Region ist dieses Fließ, neben vielen anderen, unentbehrlich.
+
+<br>
+
+Greenpeace schrieb dazu: „Den ‚Sündenwald‘ als Teil eines lebenswichtigen Biotopverbundes zu roden (...) ist ein Umweltverbrechen. Wer den Hambacher Wald erhalten will, darf seine Lebensadern nicht kappen. Der Braunkohlekonzern RWE, die grüne Wirtschaftsministerin Mona Neubaur beziehungsweise der grüne Umweltminister Oliver Krischer müssen die Vorbereitungen zur Rodung sofort stoppen.“
+
+<br>
+
+![](../pics/manheimerbucht2.png)
+
+<br>
+
+Laut RWE soll das Material aus der sog. Manheimer Bucht für den Aufbau von stabilen und sicheren Böschungen u.a. im Bereich Elsdorf verwendet werden. Wieder einmal sollen die besten Böden Deutschlands mit Genehmigung einer Landesregierung unwiederbringlich zerstört werden.
+
+<br>
+
+Irrsinn ist es doch, wenn dieser Lössboden mit sehr hoher Bodenwertigkeit (~ 95 von 100) auf der Innenkippe der Sophienhöhe aufgebracht werden, um dann dort in einigen Jahren Landwirtschaft betreiben zu können. Aufschüttungen erreichen nie die Qualität von gewachsenen Bodenstrukturen. Auch Begrifflichkeiten werden aus dem Gedächtnis entfernt: Wer kennt noch die „Jülich-Zülpicher-Börde“? Die geringe Anzahl der LKW, beladen mit Material aus dem Manheimer Loch, die Elsdorf ansteuern, wirft die Frage auf: was geschieht mit dem Großteil des gebaggerten Materials? Kann denn ausgeschlossen werden, dass mit dem übrigen Material, größtenteils Sand und Kies, RWE aus dem Tagebau zusätzlich ‚Kohle macht‘?
+
+<br>
+
+![](../pics/manheimerbucht3.png)
+
+<br>
+
+Durch das nahe Heranbaggern an noch bestehende Waldstrukturen wird den Wurzelregionen der Bäume noch mehr Wasser entzogen, sodass der Fortbestand auch dieser Wälder stark gefährdet ist. Der Hambacher Wald darf nicht durch weitere Abbaggerungen zu einer Halbinsel werden. Durch die nahegelegenen Kiesgruben südlich des Hambacher Waldes fehlen diesem sowieso schon jetzt große Mengen an Grundwasser.
+
+<br>
+
+![](../pics/manheimerbucht4.png)
+
+<br>
+
+Das Manheimer Loch, in einigen Plänen als Energiebucht bezeichnet und in Hochglanzdarstellungen gepriesen mit schwimmenden PV-Anlagen und im Wasser stehenden Windkraftanlagen, soll dem größten CO2–Emittenten Europas endlich das grüne Lügenmäntelchen umhängen.
+Ebenso von ehrgeiziger Phantasie zeugen die Vorstellungen eines Pumpspeicherkraftwerks zwischen dem Manheimer Loch als Obersee und dem Hambacher ‚Restsee‘ als Untersee. Nebenbei: Das Manheimer Loch wird nicht voll Wasser laufen können, weil der See-Spiegel laut neueren hydrogeologischen Untersuchungen 60m unterhalb der Geländeoberkante bleiben wird und die ‚Bucht‘ nur 60m tief ausgebaggert werden soll. Finde den Fehler!
+
+<br>
+
+Die Europäische Union hat 2024 die Richtlinie über Umweltkriminalität beschlossen. Darin wird erstmals auch von Ökozid gesprochen. Demnach können nunmehr auch Großkonzerne wie RWE strafrechtlich belangt werden. Der Deutsche Bundestag ist aufgefordert diese Richtlinie umgehend in nationales Recht umzusetzen.
+
+<br>
+
+Um die Schäden an Natur und Umwelt nicht noch größer werden zu lassen, muss ein sofortiger Stopp der Braunkohleförderung und ein Ende der Flächenvernichtung durch RWE erfolgen. Weder in Hambach noch in Garzweiler darf der Tagebau vergrößert werden. Es ist geboten, die ‚Restseen‘ zu verkleinern. Wir fordern ein echtes Moratorium (Nachdenken) von unabhängigen Expert:innen, um endlich naturbasierte Lösungen für die anstehende Problemstellungen zu finden.
+
+<br>
+
+![](../pics/manheimerbucht5.png)
+
+<br>
+
+Wir müssen aus der Spirale von Gewinnsteigerung der Konzerne, Umweltschädigung der Landschaften und Kostenübertragung auf die kommenden Generationen sofort aussteigen.
+:::
+
+:::{focus-on="cr-setup_map"}
+
+
+## Erdbebengefahrenzone z.B. Peringsmaar
+
+WDR am 28.08.2024: “Leichtes Erdbeben bei Bergheim. Der Erdstoß wurde in 1 km Tiefe ausgelöst, auf der Fläche des ehemaligen Tagebaus Fortuna Garsdorf bei Bergheim-Paffendorf”.
+
+<br>
+
+Das Braunkohlegebiet steht geologisch in engem Zusammenhang mit der Erdbebenzone III im Aachener Raum. Dies wird noch bestärkt durch alte Bergbaustollen, die aus einem älteren Bergbau stammend, sich z.B. unterhalb des Hambacher Tagebaus befinden.
+
+<br>
+
+Diesbezügliche Gefährdungen - z.B. die Standfestigkeit der Grube oder die „Dichtheit des Seegrundes“ - werden an keiner Stelle thematisiert und/oder untersucht.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+##  Gefährdung der Feuchtgebiete z.B. Schwalm a.d. Pannenmühle
+
+Ein Teil des Rheinwassers soll bis die Füllhöhe des Garzweiler Tagebaus erreicht wird, direkt in die Feuchtgebiete Schwalm/Nette geleitet werden, um diese zu erhalten.
+
+<br>
+
+Danach soll die Niers aus dem Überlauf des Garzweiler Sees durch den sog. „Nierscanyon“ gespeist werden. Durch beide Einspeisungen werden oben schon beschriebene Schadstoffe in diese Biotope gelangen und ebenfalls das Grundwasser kontaminieren.
+
+<br>
+
+Allerdings ist die Zuleitung des Rheinwassers bis zu den NSGen nicht mit beantragt. Aus Kreisen des BUND wurde berichtet, dass ebenfalls die Möglichkeit diskutiert wird, die Feuchtgebiete ebenfalls aus der angedachten Trinkwasserleitung (s.u. 7) aus dem Binsheimer Feld zu speisen.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+##  Gefährdungen der Trinkwasserversorgung z.B. im Binsheimer Feld 
+
+<br>
+
+![](../pics/trinkwasser_gefaehrdung.png)
+
+<br>
+
+Das Land NRW ist sehr stark betroffen von großen wasserwirtschaftlichen und -technischen Herausforderungen, die sich sowohl auf die Bausubstanz, die Landwirtschaft und die Versorgung der Bevölkerung mit sauberem Trinkwasser auswirken. Linksrheinisch gibt es riesige Sümpfungsgebiete durch den Braun- und Steinkohleabbau, die Salzbergwerke sowie Veränderungen des Grundwasserspiegels durch den großflächigen Kiesabbau. Zwischen diesen Standorten zeigen sich unerklärliche Grundwasseranstiege. Ohne eine Gesamtbetrachtung darf nicht weiter in den Wasserhaushalt der Region eingegriffen werden. Schließlich hat das Rheinische Revier durch die Sümpfungsmaßnahmen ein Grundwasserdefizit von 20 Mrd. Kubikmeter Wasser. Laut einer Untersuchung verliert Deutschland im globalen Ranking das meiste Wasser (siehe Grace-Mission des Global Institute for Water Security 2022).
+
+<br>
+
+Wie vorstehend beschrieben, versauert teilweise auch das Grundwasser und damit werden im Laufe der Zeit fast alle Trinkwasserbrunnen rund um die Tagebaue unbrauchbar – wahrscheinlich betroffen auch die Privatbrauer Bolten in Korschenbroich (N 51.18346, E 6.49947). Außerdem wird als zweites Verwitterungsprodukt des Pyrits in großen Mengen Ocker gebildet, dessen Entfernung aus dem Wasser und Entsorgung an keiner Stelle mitgeplant wurde.
+
+<br>
+
+Eine zusätzliche Gefährdung entsteht durch die Mobilisierung von Altlasten aus Böschungsbereichen bei steigendem Grundwasser und dessen Verschmutzung.
+
+<br>
+
+Die Verfüllung der Natur(schutz)gebiete mit ungeeignetem Wasser wirkt sich auch dort auf die Trinkwasserqualität aus. Das nach einem Urteil des Europäischen Gerichtshofes (EuGH 2020 / Rs. C.535/18) geltende Verschlechterungsverbot für Grundwasser wird missachtet. Wasser ist das elementar lebenswichtigste Gut und wird so in unverantwortlicher Weise gefährdet.
+
+<br>
+
+Weitere Gefährdungen durch die angedachte Trinkwasserleitung aus dem Binsheimer Feld nach Mönchengladbach und andere Orte.
+
+<br>
+
+Wie bei der RWTL werden auch beim Bau dieser Trinkwasserleitung Biotope und Grundwasserschichten durchschnitten. Die Auswirkungen auf die Grundwasserströme im Rhein-Maas-Niers-Gebiet werden nicht untersucht.
+
+<br>
+
+Geplant ist u.a. die Entnahme von Rheinuferfiltrat. Fraglich ist, ob das Rheinuferfiltrat wegen der Folgen des Klimawandels in ausreichender Menge zur Verfügung stehen wird und ob seine Schadstoffbelastung bei sinkenden Rheinwasserständen und den dann zu erwartenden höheren Konzentrationen eine Verarbeitung zu Trinkwasser zuläßt. 
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+##  Rechtliche Fragen und Probleme z.B. Ende “Garzweiler-Leitung” und Einleitungsbauwerk bei Elsdorf (Porta Sofia)
+
+Genehmigungsverfahren 
+
+<br>
+
+Das Verlegen einer Rohrfernleitung unterliegt normalerweise der Rohrfernleitungsverordnung. Warum darf RWE hier eine Genehmigung nach Bergrecht beantragen? Bislang ist nur Entnahme und Einleitung nach Bergrecht möglich; die Leitungen selbst sind durch kommunale Entscheidungen zu genehmigen.
+
+<br>
+
+Unsere Forderung: Es muss ein gemeinsames Genehmigungsverfahren zur Entnahme und Einleitung geben; denn alle Probleme und Gefahren, die im Kontext stehen, müssen zwingend zusammen gesehen und in der Planung zusammen bedacht werden.
+
+<br>
+
+Aus dem Antrag ist nicht klar ersichtlich, was die RWE Power AG denn nun beantragt. Der Titel des Antrags lässt vermuten: es geht um den Bau der Rheinwassertransportleitung. Die beantragten Genehmigungen beziehen sich sehr häufig auf wasserrechtliche Themen. Die angefügten Dokumente enthalten dann die Bauabschnitte der Pipeline. Sollte ein Genehmigungsverfahren in diesem relevanten Ausmaß nicht konkreter und für Außenstehende klar verständlich sein? Zumal für die Genehmigungen in unterschiedlichen Bereichen schließlich auch Beantragungen bei unterschiedlichen Behörden von Nöten sind.
+
+<br>
+
+Des weiteren stellt sich die Frage: Warum ist die Bergbaubehörde für wasserrechtliche Genehmigungen zuständig? Insbesondere ergeben sich folgende Problemlagen:
+
+<br>
+
+![](../pics/NEULAND-HAMBACH-Rahmenplan-Hambach-Einleitbauwerk Porta Sofia.jpg)
+
+<br>
+
+![](../pics/NEULAND-HAMBACH-Rahmenplan-Hambach-Gesamtplan-2040.jpg)
+
+<br>
+
+![](../pics/NEULAND-HAMBACH-See-2070.jpg)
+
+<br>
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+Die Teilgenehmigungen zum Bau der RWTL und der Wasserentnahme bei Dormagen werden beantragt, ohne die wasserrechtliche Genehmigung zur Einleitung des Rheinwassers in die Tagebaue und die Feuchtbiotope Schwalm/Nette gleichzeitig mit zu beantragen. Durch diese Vorwegnahme werden wieder Sachzwänge geschaffen, die letztendlich zu der Einleitung des Rheinwassers in die Braunkohlegruben und die Schutzgebiete führen.
+
+<br>
+
+Es ist bislang nicht ersichtlich, wie die RWTL von Garzweiler aus weitergebaut werden soll.
+
+<br>
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Verschlechterungsverbot z.B. Korschenbroich / Brauerei Bolten
+
+Trinkwasser / Grundwasser
+
+<br>
+
+Wie vorstehend beschrieben, versauert teilweise auch das Grundwasser und damit werden im Laufe der Zeit fast alle Trinkwasserbrunnen rund um die Tagebaue unbrauchbar. Siehe unter 7 die Problematik der Trinkwasserbrunnen am Beispiel Korchenbroich / Bolten. Außerdem wird sich als zweites Verwitterungsprodukt des Pyrits in großen Mengen Ocker bilden, dessen Entfernung aus dem Wasser und dessen Entsorgung an keiner Stelle mitgeplant wurde.
+
+<br>
+
+Eine zusätzliche Gefährdung entsteht durch die Mobilisierung von Altlasten aus Böschungsbereichen bei steigendem Grundwasser und dessen Verschmutzung. Die Verfüllung der Natur(schutz)gebiete mit ungeeignetem Wasser wirkt sich auch dort auf die Trinkwasserqualität aus. Das nach einem Urteil des Europäischen Gerichtshofes (EuGH 2020 / Rs. C.535/18) geltende Verschlechterungsverbot für Grundwasser wird missachtet.
+
+:::
+
+:::{focus-on="cr-setup_map"}
+
+## Wasser ist das elementar lebenswichtigste Gut und wird so in unverantwortlicher Weise gefährdet.
+
+:::
+
+:::
+
+<h1>Vielen Dank fürs Lesen!</h1>
+
+<p>Hrsg.: Wasserbündnis Rheinisches Revier</p>
+
+<p>
+  E-mail-Kontakt: <a href="mailto:unser-wasser-rheinland@systemli.org">unser-wasser-rheinland@systemli.org</a><br>
+  Homepage des Wasserbündnisses: <a href="https://wasserbuendnis.org" target="_blank">wasserbuendnis.org</a>
+</p>
+
+<p>Die Fotos von der „schönen neuen Welt“ sind Veröffentlichungen der Neuland-Hambach-GmbH entnommen worden.</p>
+<p>Zeichnungen: Jari Banas</p>
+<p>Erstellt von <a href="https://klimakollektiv.org/" target="_blank">Klima*Kollektiv</a> und <a href="https://correlaid.org/" target="_blank">CorrelAid</a></p>
+
+<p>Scrollytelling ermöglicht durch die 
+<a href="https://closeread.netlify.app" target="_blank">Closeread Quarto Extension</a></p>
+
+<p>
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+    <img alt="Creative Commons Lizenz" src="https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png" />
+  </a>
+  <small>Dieses Werk ist lizenziert unter einer
+  <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons Namensnennung - Nicht kommerziell - Keine Bearbeitungen 4.0 International Lizenz</a></small>.
+</p>
+
