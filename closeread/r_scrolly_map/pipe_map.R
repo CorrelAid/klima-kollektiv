@@ -3,7 +3,7 @@ library(sf)
 library(lwgeom) # for st_split
 library(fontawesome)
 
-data_path = "data" # as we assume we are at the project level
+data_path = "data" # as we assume we are at the project level (2 levels up)
 
 # add data layers
 # 1. read data
