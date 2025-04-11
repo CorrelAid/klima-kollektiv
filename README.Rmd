@@ -30,30 +30,10 @@ Diese aufbereiteten Daten werden dann im Ordner `data` gespeichert, sodass der C
 
 Eine Kopie der aufbereiteten Daten liegt ebenfalls im google drive ordner. Diese müssen dann lokal in den `data` Ordner kopiert werden um die Karte zu generieren. Die Struktur der Daten im Ordner sieht wie folgt aus:
 
-
-``` r
+```{r, data-structure}
 library(fs)
 
 dir_tree("data")
-```
-
-```
-## data
-## ├── Daten_Pipelines.csv
-## ├── Daten_Pipelines.ods
-## ├── Pumpbauwerk_Ufer.gpkg
-## ├── Rheinwassertransportleitung.kml
-## ├── Verteilbauwerk.gpkg
-## ├── garzweilersee_gp.gpkg
-## ├── garzweilersee_wasser.gpkg
-## ├── hambachersee.gpkg
-## ├── hambachersee_manheim.gpkg
-## ├── hyperscaler-bedburg.gpkg
-## ├── hyperscaler-bergheim.gpkg
-## ├── indersee_gp.gpkg
-## ├── rodungstrasse.gpkg
-## ├── suendenwaeldchen.gpkg
-## └── transportleitung_geom.gpkg
 ```
 
 ### Kartenvorbereitung
@@ -79,8 +59,7 @@ __Wichtig!__ <br>
 
 Um neue Sections zur Karte hinzuzufügen, muss nur ein neuer Listeneintrag mit Koordinaten und zoom level, zum Beispiel
 
-
-``` r
+```{r, neuer-eintrag-liste, eval=FALSE}
 list(
     coords = c(53.919, 8.288) #Neue Section
     , zoom = 14
