@@ -1,8 +1,6 @@
 ---
 title: "README"
-output: 
-  html_document: 
-    keep_md: true
+output: github_document
 date: "2025-04-11"
 ---
 
