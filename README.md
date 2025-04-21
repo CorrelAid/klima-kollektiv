@@ -4,9 +4,7 @@ README
 
 # Correlaid Projekt Klima-Kollektiv
 
-Code repository für die Erstellung einer “scrollytelling” Karte zur
-Visualisierung der Konsequenzen der Renaturierung der Braunkohle-Gruben
-im rheinischen Revier.
+Code repository für die Erstellung einer “scrollytelling” Karte. Sie visualisiert die Konsequenzen der Befüllung der Braunkohle-Gruben im rheinischen Revier mit Rheinwasser.
 
 Die Karte gibt es live hier:
 
