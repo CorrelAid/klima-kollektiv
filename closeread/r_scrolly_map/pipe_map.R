@@ -1,4 +1,5 @@
 library(leaflet)
+library(leafpop)
 library(sf)
 library(lwgeom) # for st_split
 library(fontawesome)
@@ -130,6 +131,13 @@ map = addPolygons(
   , fillOpacity = 0.3
   , label = "Rodungstrasse"
   , options = pathOptions(pane = "polygonsPane")
+)
+
+map = addPopupImages(
+  map
+  , "closeread/pics/Grafik_RWTL-Querschnitt.jpeg"
+  , group = "Rodungstrasse"
+  , width = 768
 )
 
 # bauwerke
