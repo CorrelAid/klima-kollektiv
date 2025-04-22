@@ -1,12 +1,10 @@
 README
 ================
-2025-04-11
+2025-04-21
 
 # Correlaid Projekt Klima-Kollektiv
 
-Code repository für die Erstellung einer “scrollytelling” Karte zur
-Visualisierung der Konsequenzen der Renaturierung der Braunkhle-Gruben
-im rheinischen Revier.
+Code repository für die Erstellung einer “scrollytelling” Karte. Sie visualisiert die Konsequenzen der Befüllung der Braunkohle-Gruben im rheinischen Revier mit Rheinwasser.
 
 Die Karte gibt es live hier:
 
@@ -16,11 +14,10 @@ Die Karte gibt es live hier:
 
 ### Daten
 
-Die Rohdaten liegen in einem [Google Drive
+Die Rohdaten liegen in diesem [Google Drive
 Ordner](https://drive.google.com/drive/u/0/folders/1NIZPTE6bbTeMzjccTsxFNPS_JI491H-i).
-Dort liegen auch andere projektrelevante Daten, wie etwa meting minutes
-und Präsentationen, die allerdings nur für Projektmitglieder zugänglich
-sind.
+Dort liegen auch andere projektrelevante Daten, wie etwa meeting minutes
+und Präsentationen.
 
 Die Daten wurden von verschiedenen (Roh-)Datenquellen zusammengeführt:
 
@@ -29,18 +26,18 @@ Die Daten wurden von verschiedenen (Roh-)Datenquellen zusammengeführt:
   Tutorials zur Digitalisierung sind im
   [Wiki](https://github.com/CorrelAid/klima-kollektiv/wiki/Tutorials)
   velinkt.
-- Von Projektmitgliedern in Google maps erstellte Daten wurden direkt
+- Von Projektmitgliedern in Google Maps erstellte Daten wurden direkt
   als `.kml` heruntergeladen und weiterverarbitet.
 
 Diese aufbereiteten Daten werden dann im Ordner `data` gespeichert,
-sodass der Code in diesem repo mit relativen Pfaden Arbeitet. Um die
+sodass der Code in diesem repo mit relativen Pfaden arbeitet. Um die
 Größe dieses repos nicht ausufern zulassen, werden diese Daten
-allerdings nicht in der Versionskontrolle ignoriert (über das
+allerdings in der Versionskontrolle ignoriert (über die
 [`.gitignore`](https://github.com/CorrelAid/klima-kollektiv/blob/main/data/.gitignore)
-file im Ordner).
+Datei im Ordner).
 
-Eine Kopie der aufbereiteten Daten liegt ebenfalls im google drive
-ordner. Diese müssen dann lokal in den `data` Ordner kopiert werden um
+Eine Kopie der aufbereiteten Daten liegt ebenfalls im Google Drive
+Ordner. Diese müssen dann lokal in den `data` Ordner kopiert werden um
 die Karte zu generieren. Die Struktur der Daten im Ordner sieht wie
 folgt aus:
 
@@ -71,24 +68,24 @@ dir_tree("data")
 
 Um die Karte für die Webseite zu generieren wird zuerst das R-Skript
 [`closeread/r_scrolly_map/pipe_map.R`](https://github.com/CorrelAid/klima-kollektiv/blob/main/closeread/r_scrolly_map/pipe_map.R)
-ausgeführt. In dem Skript wird die Karte als `map.rds` gepseichert.
+ausgeführt. In dem Skript wird die Karte als `map.rds` gespeichert.
 Diese Datei wird dann im Dokument
 [`closeread/r_scrolly_map/das_ende_der_braunkohle.qmd`](https://github.com/CorrelAid/klima-kollektiv/blob/main/closeread/r_scrolly_map/das_ende_der_braunkohle.qmd)
-eingelesen und in die story-telling Webseite integriert.
+eingelesen und in die scrollytelling Webseite integriert.
 
 ### Website generieren
 
-Die eigentliche Webseite wird dann im oben genannten `.qmd` file
+Die eigentliche Webseite wird dann in der oben genannten `.qmd` Datei
 generiert. Hierzu wird erstmal eine [Liste mit Koordinaten und Zoom
 levels](https://github.com/CorrelAid/klima-kollektiv/blob/main/closeread/r_scrolly_map/das_ende_der_braunkohle.qmd#L25-L94)
-erstellt auf die die Karte beim scrollen der Seite fokussiert werden
+erstellt, auf die die Karte beim scrollen der Seite fokussiert werden
 soll.
 
-Als “trigger” für die Änderung des Kartenfokus dienen die jeweiligen
+Als “trigger” für die Änderung des Kartenfokus' dienen die jeweiligen
 [`:::{focus-on="cr-setup_map"}`](https://github.com/CorrelAid/klima-kollektiv/blob/main/closeread/r_scrolly_map/das_ende_der_braunkohle.qmd#L134-L157)
-sections im `.qmd` file, die jeweils mit `:::` beendet werden.
+sections in der `.qmd` Datei, die jeweils mit `:::` beendet werden.
 
-Um das `.qmd` file rendern zu können muss [quarto](https://quarto.org/)
+Um die `.qmd` Datei rendern zu können, muss [quarto](https://quarto.org/)
 und die zugehörige [closeread](https://closeread.dev/) extension
 installiert sein. Letztere ist in diesem repo schon enthalten - im
 Ornder
@@ -107,7 +104,7 @@ beim scrollen die Refokussierung der Karte triggern.
 ### Webseite erweitern
 
 Um neue Sections zur Karte hinzuzufügen, muss nur ein neuer
-Listeneintrag mit Koordinaten und zoom level, zum Beispiel
+Listeneintrag mit Koordinaten und Zoom level, zum Beispiel
 
 ``` r
 list(
@@ -116,7 +113,8 @@ list(
   )
 ```
 
-und eine neue `:::{focus-on="cr-setup_map"}`, e.g. 
+und eine neue `:::{focus-on="cr-setup_map"}` Section im Textteil hinzugefügt werden.
+Zum Beispiel: 
 
     :::{focus-on="cr-setup_map"}
 
@@ -129,8 +127,6 @@ und eine neue `:::{focus-on="cr-setup_map"}`, e.g. 
     html calls.
 
     :::
-
-Section im Textteil hinzugefügt werden.
 
 **Wichtig** hierbei ist, dass die Sections **NICHT** nach Namen mit den
 Koordinaten in der Liste verbunden sind, sondern nach Position in der
